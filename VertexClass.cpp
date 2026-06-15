@@ -189,7 +189,7 @@ void Vertex::ComputeVertexAngles() {
         Edge* e2 = edgeVecs[(i + 1) % n].first;
 		Edge* e3 = edgeVecs[(i + 2) % n].first;
 
-		//cout << e1->GetTension_ForceOnVertex(this).Magnitude() << endl;
+		cout << e1->GetTension_ForceOnVertex(this).Magnitude() << endl;
 
 		if(NucleationHelper(e1, e2, e3)){
 			nucleation.push_back(1);
@@ -221,10 +221,21 @@ bool Vertex::NucleationHelper(Edge* e1, Edge* e2, Edge* e3) {
 	double forceFromEdge2 = e2->GetTension_ForceOnVertex(this).Magnitude();
 	double forceFromEdge3 = e3->GetTension_ForceOnVertex(this).Magnitude();
 	
-	if(forceFromEdge1 > 1.5 && forceFromEdge2 > 1.5){
+	bool useThreeEdge = 0;
+	double threshold = 1.4;
+
+
+
+	if(useThreeEdge){
+		if(forceFromEdge1 > threshold && forceFromEdge2 > threshold && forceFromEdge3 < threshold){
 		return 1;
+		}
+		return 0;
 	}
 	
+	if(forceFromEdge1 > threshold && forceFromEdge2 > threshold){
+		return 1;
+	}
 	return 0;
 }
 
