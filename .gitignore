@@ -1,0 +1,5 @@
+*.o
+my_program_AG
+my_program_Dyn
+MainTest.cpp
+DynamicMain.cpp
