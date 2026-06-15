@@ -75,6 +75,8 @@ bool WRITEMITOSIS = false;
 bool VERBOSEON = false;
 bool EQUILIBRIUMMITOSIS = false;
 double C4 = 0;
+double NUCLEATIONTHRESHOLD = 1.4;
+bool NUCLEATIONBASECRITERIA = true;
 //This is the generator for random numbers to use call "distribution(generator)" 
 mt19937_64 generator;
 uniform_real_distribution<double> distribution(0.0, 1.0);

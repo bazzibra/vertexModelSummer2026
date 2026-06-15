@@ -87,7 +87,7 @@ bool WRITEMITOSIS = false;
 bool VERBOSEON = true;
 bool EQUILIBRIUMMITOSIS = false;
 double NUCLEATIONTHRESHOLD = 1.4;
-bool NUCLEATIONBASECRITERIA = 0;
+bool NUCLEATIONBASECRITERIA = true;
 //bool InEquilibrium = false; //This is used to determine if the tissue is equilibrated
 double C4 = 0;
 //This is the generator for random numbers to use call "distribution(generator)" 
