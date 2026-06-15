@@ -181,14 +181,17 @@ void Vertex::ComputeVertexAngles() {
 	// Compute nucleation
 	// ---------------------------------------------------
 
-	vector<bool> nucleation;
+	nucleation.clear();
 
 	for (int i = 0; i < n; i++) {
 
 		Edge* e1 = edgeVecs[i].first;
         Edge* e2 = edgeVecs[(i + 1) % n].first;
+		Edge* e3 = edgeVecs[(i + 2) % n].first;
 
-		if(e1->GetTension_ForceOnVertex(this).Magnitude() > 0.0 && e2->GetTension_ForceOnVertex(this).Magnitude() > 0.0){
+		//cout << e1->GetTension_ForceOnVertex(this).Magnitude() << endl;
+
+		if(NucleationHelper(e1, e2, e3)){
 			nucleation.push_back(1);
 		}
 		else{
@@ -201,19 +204,29 @@ void Vertex::ComputeVertexAngles() {
 	// ---------------------------------------------------
 	// Debug output
 	// ---------------------------------------------------
-	cout << "Vertex " << id << " theta angles: ";
-	for (double a : theta) cout << a << " ";
+	//cout << "Vertex " << id << " theta angles: ";
+	//for (double a : theta) cout << a << " ";
 
-	cout << "\nVertex " << id << " psi angles: ";
-	for (double a : psi) cout << a << " ";
+	//cout << "\nVertex " << id << " psi angles: ";
+	//for (double a : psi) cout << a << " ";
 
-	cout << "\nVertex " << id << " nucleation ";
-	for (double a : nucleation) cout << a << " ";
+	//cout << "\nVertex " << id << " nucleation ";
+	//for (double a : nucleation) cout << a << " ";
 
-	cout << endl;
+	//cout << endl;
 }
 
-
+bool Vertex::NucleationHelper(Edge* e1, Edge* e2, Edge* e3) {
+	double forceFromEdge1 = e1->GetTension_ForceOnVertex(this).Magnitude();
+	double forceFromEdge2 = e2->GetTension_ForceOnVertex(this).Magnitude();
+	double forceFromEdge3 = e3->GetTension_ForceOnVertex(this).Magnitude();
+	
+	if(forceFromEdge1 > 1.5 && forceFromEdge2 > 1.5){
+		return 1;
+	}
+	
+	return 0;
+}
 
 
 

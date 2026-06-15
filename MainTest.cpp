@@ -115,7 +115,7 @@ int main()
 	
 	//Path to the folder that your initial files are in 
 	// /Users/hnunley/Desktop/VertexModelCode_Avik/AGVertexModel_DynamicTensions_HSN/AGVertexModel_DynamicTensions
-	string PathName =  "//Users//rafaelvolkamer-pastor//Downloads//newDynamicTensions-Reid//input_files//";
+	string PathName =  "//Users//rafaelvolkamer-pastor//Library//CloudStorage//GoogleDrive-volkamerr@carleton.edu//My Drive//Summer Experiences//Michigan Biophysics REU//vertexModelSummer2026//vertexModelSummer2026//input_files//";
 
 	cout << "Enter name of imput file: ";
 	cin >> InputFileName;

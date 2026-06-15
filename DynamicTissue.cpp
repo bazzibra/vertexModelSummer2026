@@ -470,7 +470,7 @@ void Tissue_Dynamic::HelperWriteOutputData_Write2File(ofstream* datafile, bool i
 		*/
 
 		*datafile << "Vertices" << endl;
-		*datafile << "id\tx\ty\tAnglestheta1\tAnglestheta2\tAnglestheta3\tPsiAngle1\tPsiAngle2\tPsiAngle3" << endl;
+		*datafile << "id\tx\ty\tAnglestheta1\tAnglestheta2\tAnglestheta3\tPsiAngle1\tPsiAngle2\tPsiAngle3\tNucleation1\tNucleation2\tNucleation3" << endl;
 
 		for (Vertex* v : vertices) {
 			v->ComputeVertexAngles();
@@ -493,6 +493,17 @@ void Tissue_Dynamic::HelperWriteOutputData_Write2File(ofstream* datafile, bool i
 			for (int i = 0; i < 3; i++) {
 				if (i < v->psi.size())
 					*datafile << v->psi[i];
+				else
+					*datafile << 0;   // or NaN
+				if (i < 2) *datafile << "\t";
+			}
+
+			*datafile << "\t";
+
+			// Always print exactly 3 nucleation
+			for (int i = 0; i < 3; i++) {
+				if (i < v->nucleation.size())
+					*datafile << v->nucleation[i];
 				else
 					*datafile << 0;   // or NaN
 				if (i < 2) *datafile << "\t";
@@ -572,7 +583,8 @@ void Tissue_Dynamic::HelperWriteOutputData_Write2File(ofstream* datafile, bool i
 		//Updates with the smaller tension of the best pair of edges for 3- way vertex 
 		*datafile << "Vertices" << endl;
 		*datafile << "id\tx\ty\tAnglestheta1\tAnglestheta2\tAnglestheta3\t"
-			<< "PsiAngle1\tPsiAngle2\tPsiAngle3"
+			<< "PsiAngle1\tPsiAngle2\tPsiAngle3\t"
+			<< "Nucleation1\tNucleation2\tNucleation3"
 			// << "\tPairMin12\tPairMin13\tPairMin23\tWeakestPairMin"
 			<< endl;
 
@@ -624,6 +636,18 @@ void Tissue_Dynamic::HelperWriteOutputData_Write2File(ofstream* datafile, bool i
 					*datafile << v->psi[i];
 				else
 					*datafile << 0;
+
+				if (i < 2) *datafile << "\t";   // avoid trailing tab
+			}
+			
+			*datafile << "\t";
+			
+			// Always print exactly 3 nucleation
+			for (int i = 0; i < 3; i++) {
+				if (i < v->nucleation.size())
+					*datafile << v->nucleation[i];
+				else
+					*datafile << -1;
 
 				if (i < 2) *datafile << "\t";   // avoid trailing tab
 			}

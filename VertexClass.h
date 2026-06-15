@@ -44,6 +44,7 @@ public:
 	//Add the the angle computation (Reid Tang at 11/4/2025)
 	vector<double> theta;  // opening angles between edges (usually 3 values)
 	vector<double> psi;    // Psi angles relative to pulling direction
+	vector<double> nucleation; //whether there is a nucleation cite
 
 	void ComputeVertexAngles();
 
@@ -125,6 +126,8 @@ public:
 	//! Changes all y-flags on the edges atached to the vertex to be the oposite of what they currently are (needed for moving vertices across the boundary).
 	void ChangeYEdgeFlags();
 
+	//! Takes in the three edges of a vertex in the order of ComputeVertexAngles and 
+	bool NucleationHelper(Edge* e1, Edge* e2, Edge* e3);
 };
 
 
