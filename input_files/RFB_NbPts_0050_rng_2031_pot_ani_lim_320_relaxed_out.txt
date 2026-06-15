@@ -26,6 +26,8 @@ KAPPA	0.23
 GAMMA0	1
 Y	5.66
 NUMBER OF CELLS	50
+NUCLEATIONTHRESHOLD	1.4
+NUCLEATIONBASECRITERIA	0
 endGlobal
 Vertices
 id	x	y	Anglestheta1	Anglestheta2	Anglestheta3	PsiAngle1	PsiAngle2	PsiAngle3	Nucleation1	Nucleation2	Nucleation3
@@ -362,6 +364,8 @@ KAPPA	0.23
 GAMMA0	1
 Y	5.66
 NUMBER OF CELLS	50
+NUCLEATIONTHRESHOLD	1.4
+NUCLEATIONBASECRITERIA	0
 endGlobal
 Vertices
 id	x	y	Anglestheta1	Anglestheta2	Anglestheta3	PsiAngle1	PsiAngle2	PsiAngle3	Nucleation1	Nucleation2	Nucleation3
@@ -698,6 +702,8 @@ KAPPA	0.23
 GAMMA0	1
 Y	5.66
 NUMBER OF CELLS	50
+NUCLEATIONTHRESHOLD	1.4
+NUCLEATIONBASECRITERIA	0
 endGlobal
 Vertices
 id	x	y	Anglestheta1	Anglestheta2	Anglestheta3	PsiAngle1	PsiAngle2	PsiAngle3	Nucleation1	Nucleation2	Nucleation3
@@ -1034,6 +1040,8 @@ KAPPA	0.23
 GAMMA0	1
 Y	5.66
 NUMBER OF CELLS	50
+NUCLEATIONTHRESHOLD	1.4
+NUCLEATIONBASECRITERIA	0
 endGlobal
 Vertices
 id	x	y	Anglestheta1	Anglestheta2	Anglestheta3	PsiAngle1	PsiAngle2	PsiAngle3	Nucleation1	Nucleation2	Nucleation3
@@ -1370,6 +1378,8 @@ KAPPA	0.23
 GAMMA0	1
 Y	5.66
 NUMBER OF CELLS	50
+NUCLEATIONTHRESHOLD	1.4
+NUCLEATIONBASECRITERIA	0
 endGlobal
 Vertices
 id	x	y	Anglestheta1	Anglestheta2	Anglestheta3	PsiAngle1	PsiAngle2	PsiAngle3	Nucleation1	Nucleation2	Nucleation3
@@ -1706,6 +1716,8 @@ KAPPA	0.23
 GAMMA0	1
 Y	5.66
 NUMBER OF CELLS	50
+NUCLEATIONTHRESHOLD	1.4
+NUCLEATIONBASECRITERIA	0
 endGlobal
 Vertices
 id	x	y	Anglestheta1	Anglestheta2	Anglestheta3	PsiAngle1	PsiAngle2	PsiAngle3	Nucleation1	Nucleation2	Nucleation3
@@ -2042,6 +2054,8 @@ KAPPA	0.23
 GAMMA0	1
 Y	5.66
 NUMBER OF CELLS	50
+NUCLEATIONTHRESHOLD	1.4
+NUCLEATIONBASECRITERIA	0
 endGlobal
 Vertices
 id	x	y	Anglestheta1	Anglestheta2	Anglestheta3	PsiAngle1	PsiAngle2	PsiAngle3	Nucleation1	Nucleation2	Nucleation3
@@ -2378,6 +2392,8 @@ KAPPA	0.23
 GAMMA0	1
 Y	5.66
 NUMBER OF CELLS	50
+NUCLEATIONTHRESHOLD	1.4
+NUCLEATIONBASECRITERIA	0
 endGlobal
 Vertices
 id	x	y	Anglestheta1	Anglestheta2	Anglestheta3	PsiAngle1	PsiAngle2	PsiAngle3	Nucleation1	Nucleation2	Nucleation3
@@ -2714,6 +2730,8 @@ KAPPA	0.23
 GAMMA0	1
 Y	5.66
 NUMBER OF CELLS	50
+NUCLEATIONTHRESHOLD	1.4
+NUCLEATIONBASECRITERIA	0
 endGlobal
 Vertices
 id	x	y	Anglestheta1	Anglestheta2	Anglestheta3	PsiAngle1	PsiAngle2	PsiAngle3	Nucleation1	Nucleation2	Nucleation3
@@ -3050,6 +3068,8 @@ KAPPA	0.23
 GAMMA0	1
 Y	5.66
 NUMBER OF CELLS	50
+NUCLEATIONTHRESHOLD	1.4
+NUCLEATIONBASECRITERIA	0
 endGlobal
 Vertices
 id	x	y	Anglestheta1	Anglestheta2	Anglestheta3	PsiAngle1	PsiAngle2	PsiAngle3	Nucleation1	Nucleation2	Nucleation3
@@ -3386,6 +3406,8 @@ KAPPA	0.23
 GAMMA0	1
 Y	5.66
 NUMBER OF CELLS	50
+NUCLEATIONTHRESHOLD	1.4
+NUCLEATIONBASECRITERIA	0
 endGlobal
 Vertices
 id	x	y	Anglestheta1	Anglestheta2	Anglestheta3	PsiAngle1	PsiAngle2	PsiAngle3	Nucleation1	Nucleation2	Nucleation3
@@ -3722,6 +3744,8 @@ KAPPA	0.23
 GAMMA0	1
 Y	5.66
 NUMBER OF CELLS	50
+NUCLEATIONTHRESHOLD	1.4
+NUCLEATIONBASECRITERIA	0
 endGlobal
 Vertices
 id	x	y	Anglestheta1	Anglestheta2	Anglestheta3	PsiAngle1	PsiAngle2	PsiAngle3	Nucleation1	Nucleation2	Nucleation3
@@ -4058,6 +4082,8 @@ KAPPA	0.23
 GAMMA0	1
 Y	5.66
 NUMBER OF CELLS	50
+NUCLEATIONTHRESHOLD	1.4
+NUCLEATIONBASECRITERIA	0
 endGlobal
 Vertices
 id	x	y	Anglestheta1	Anglestheta2	Anglestheta3	PsiAngle1	PsiAngle2	PsiAngle3	Nucleation1	Nucleation2	Nucleation3
@@ -4394,6 +4420,8 @@ KAPPA	0.23
 GAMMA0	1
 Y	5.66
 NUMBER OF CELLS	50
+NUCLEATIONTHRESHOLD	1.4
+NUCLEATIONBASECRITERIA	0
 endGlobal
 Vertices
 id	x	y	Anglestheta1	Anglestheta2	Anglestheta3	PsiAngle1	PsiAngle2	PsiAngle3	Nucleation1	Nucleation2	Nucleation3
@@ -4730,6 +4758,8 @@ KAPPA	0.23
 GAMMA0	1
 Y	5.66
 NUMBER OF CELLS	50
+NUCLEATIONTHRESHOLD	1.4
+NUCLEATIONBASECRITERIA	0
 endGlobal
 Vertices
 id	x	y	Anglestheta1	Anglestheta2	Anglestheta3	PsiAngle1	PsiAngle2	PsiAngle3	Nucleation1	Nucleation2	Nucleation3
@@ -5066,6 +5096,8 @@ KAPPA	0.23
 GAMMA0	1
 Y	5.66
 NUMBER OF CELLS	50
+NUCLEATIONTHRESHOLD	1.4
+NUCLEATIONBASECRITERIA	0
 endGlobal
 Vertices
 id	x	y	Anglestheta1	Anglestheta2	Anglestheta3	PsiAngle1	PsiAngle2	PsiAngle3	Nucleation1	Nucleation2	Nucleation3
@@ -5402,6 +5434,8 @@ KAPPA	0.23
 GAMMA0	1
 Y	5.66
 NUMBER OF CELLS	50
+NUCLEATIONTHRESHOLD	1.4
+NUCLEATIONBASECRITERIA	0
 endGlobal
 Vertices
 id	x	y	Anglestheta1	Anglestheta2	Anglestheta3	PsiAngle1	PsiAngle2	PsiAngle3	Nucleation1	Nucleation2	Nucleation3
@@ -5738,6 +5772,8 @@ KAPPA	0.23
 GAMMA0	1
 Y	5.66
 NUMBER OF CELLS	50
+NUCLEATIONTHRESHOLD	1.4
+NUCLEATIONBASECRITERIA	0
 endGlobal
 Vertices
 id	x	y	Anglestheta1	Anglestheta2	Anglestheta3	PsiAngle1	PsiAngle2	PsiAngle3	Nucleation1	Nucleation2	Nucleation3
@@ -6074,6 +6110,8 @@ KAPPA	0.23
 GAMMA0	1
 Y	5.66
 NUMBER OF CELLS	50
+NUCLEATIONTHRESHOLD	1.4
+NUCLEATIONBASECRITERIA	0
 endGlobal
 Vertices
 id	x	y	Anglestheta1	Anglestheta2	Anglestheta3	PsiAngle1	PsiAngle2	PsiAngle3	Nucleation1	Nucleation2	Nucleation3
@@ -6410,6 +6448,8 @@ KAPPA	0.23
 GAMMA0	1
 Y	5.66
 NUMBER OF CELLS	50
+NUCLEATIONTHRESHOLD	1.4
+NUCLEATIONBASECRITERIA	0
 endGlobal
 Vertices
 id	x	y	Anglestheta1	Anglestheta2	Anglestheta3	PsiAngle1	PsiAngle2	PsiAngle3	Nucleation1	Nucleation2	Nucleation3
@@ -6746,6 +6786,8 @@ KAPPA	0.23
 GAMMA0	1
 Y	5.66
 NUMBER OF CELLS	50
+NUCLEATIONTHRESHOLD	1.4
+NUCLEATIONBASECRITERIA	0
 endGlobal
 Vertices
 id	x	y	Anglestheta1	Anglestheta2	Anglestheta3	PsiAngle1	PsiAngle2	PsiAngle3	Nucleation1	Nucleation2	Nucleation3
@@ -7082,6 +7124,8 @@ KAPPA	0.23
 GAMMA0	1
 Y	5.66
 NUMBER OF CELLS	50
+NUCLEATIONTHRESHOLD	1.4
+NUCLEATIONBASECRITERIA	0
 endGlobal
 Vertices
 id	x	y	Anglestheta1	Anglestheta2	Anglestheta3	PsiAngle1	PsiAngle2	PsiAngle3	Nucleation1	Nucleation2	Nucleation3
@@ -7418,6 +7462,8 @@ KAPPA	0.23
 GAMMA0	1
 Y	5.66
 NUMBER OF CELLS	50
+NUCLEATIONTHRESHOLD	1.4
+NUCLEATIONBASECRITERIA	0
 endGlobal
 Vertices
 id	x	y	Anglestheta1	Anglestheta2	Anglestheta3	PsiAngle1	PsiAngle2	PsiAngle3	Nucleation1	Nucleation2	Nucleation3
@@ -7754,6 +7800,8 @@ KAPPA	0.23
 GAMMA0	1
 Y	5.66
 NUMBER OF CELLS	50
+NUCLEATIONTHRESHOLD	1.4
+NUCLEATIONBASECRITERIA	0
 endGlobal
 Vertices
 id	x	y	Anglestheta1	Anglestheta2	Anglestheta3	PsiAngle1	PsiAngle2	PsiAngle3	Nucleation1	Nucleation2	Nucleation3
@@ -8090,6 +8138,8 @@ KAPPA	0.23
 GAMMA0	1
 Y	5.66
 NUMBER OF CELLS	50
+NUCLEATIONTHRESHOLD	1.4
+NUCLEATIONBASECRITERIA	0
 endGlobal
 Vertices
 id	x	y	Anglestheta1	Anglestheta2	Anglestheta3	PsiAngle1	PsiAngle2	PsiAngle3	Nucleation1	Nucleation2	Nucleation3
@@ -8426,6 +8476,8 @@ KAPPA	0.23
 GAMMA0	1
 Y	5.66
 NUMBER OF CELLS	50
+NUCLEATIONTHRESHOLD	1.4
+NUCLEATIONBASECRITERIA	0
 endGlobal
 Vertices
 id	x	y	Anglestheta1	Anglestheta2	Anglestheta3	PsiAngle1	PsiAngle2	PsiAngle3	Nucleation1	Nucleation2	Nucleation3
@@ -8762,6 +8814,8 @@ KAPPA	0.23
 GAMMA0	1
 Y	5.66
 NUMBER OF CELLS	50
+NUCLEATIONTHRESHOLD	1.4
+NUCLEATIONBASECRITERIA	0
 endGlobal
 Vertices
 id	x	y	Anglestheta1	Anglestheta2	Anglestheta3	PsiAngle1	PsiAngle2	PsiAngle3	Nucleation1	Nucleation2	Nucleation3
@@ -9098,6 +9152,8 @@ KAPPA	0.23
 GAMMA0	1
 Y	5.66
 NUMBER OF CELLS	50
+NUCLEATIONTHRESHOLD	1.4
+NUCLEATIONBASECRITERIA	0
 endGlobal
 Vertices
 id	x	y	Anglestheta1	Anglestheta2	Anglestheta3	PsiAngle1	PsiAngle2	PsiAngle3	Nucleation1	Nucleation2	Nucleation3
@@ -9434,6 +9490,8 @@ KAPPA	0.23
 GAMMA0	1
 Y	5.66
 NUMBER OF CELLS	50
+NUCLEATIONTHRESHOLD	1.4
+NUCLEATIONBASECRITERIA	0
 endGlobal
 Vertices
 id	x	y	Anglestheta1	Anglestheta2	Anglestheta3	PsiAngle1	PsiAngle2	PsiAngle3	Nucleation1	Nucleation2	Nucleation3
@@ -9770,6 +9828,8 @@ KAPPA	0.23
 GAMMA0	1
 Y	5.66
 NUMBER OF CELLS	50
+NUCLEATIONTHRESHOLD	1.4
+NUCLEATIONBASECRITERIA	0
 endGlobal
 Vertices
 id	x	y	Anglestheta1	Anglestheta2	Anglestheta3	PsiAngle1	PsiAngle2	PsiAngle3	Nucleation1	Nucleation2	Nucleation3
@@ -10106,6 +10166,8 @@ KAPPA	0.23
 GAMMA0	1
 Y	5.66
 NUMBER OF CELLS	50
+NUCLEATIONTHRESHOLD	1.4
+NUCLEATIONBASECRITERIA	0
 endGlobal
 Vertices
 id	x	y	Anglestheta1	Anglestheta2	Anglestheta3	PsiAngle1	PsiAngle2	PsiAngle3	Nucleation1	Nucleation2	Nucleation3
@@ -10442,6 +10504,8 @@ KAPPA	0.23
 GAMMA0	1
 Y	5.66
 NUMBER OF CELLS	50
+NUCLEATIONTHRESHOLD	1.4
+NUCLEATIONBASECRITERIA	0
 endGlobal
 Vertices
 id	x	y	Anglestheta1	Anglestheta2	Anglestheta3	PsiAngle1	PsiAngle2	PsiAngle3	Nucleation1	Nucleation2	Nucleation3
@@ -10778,6 +10842,8 @@ KAPPA	0.23
 GAMMA0	1
 Y	5.66
 NUMBER OF CELLS	50
+NUCLEATIONTHRESHOLD	1.4
+NUCLEATIONBASECRITERIA	0
 endGlobal
 Vertices
 id	x	y	Anglestheta1	Anglestheta2	Anglestheta3	PsiAngle1	PsiAngle2	PsiAngle3	Nucleation1	Nucleation2	Nucleation3
@@ -11114,6 +11180,8 @@ KAPPA	0.23
 GAMMA0	1
 Y	5.66
 NUMBER OF CELLS	50
+NUCLEATIONTHRESHOLD	1.4
+NUCLEATIONBASECRITERIA	0
 endGlobal
 Vertices
 id	x	y	Anglestheta1	Anglestheta2	Anglestheta3	PsiAngle1	PsiAngle2	PsiAngle3	Nucleation1	Nucleation2	Nucleation3
@@ -11450,6 +11518,8 @@ KAPPA	0.23
 GAMMA0	1
 Y	5.66
 NUMBER OF CELLS	50
+NUCLEATIONTHRESHOLD	1.4
+NUCLEATIONBASECRITERIA	0
 endGlobal
 Vertices
 id	x	y	Anglestheta1	Anglestheta2	Anglestheta3	PsiAngle1	PsiAngle2	PsiAngle3	Nucleation1	Nucleation2	Nucleation3
@@ -11786,6 +11856,8 @@ KAPPA	0.23
 GAMMA0	1
 Y	5.66
 NUMBER OF CELLS	50
+NUCLEATIONTHRESHOLD	1.4
+NUCLEATIONBASECRITERIA	0
 endGlobal
 Vertices
 id	x	y	Anglestheta1	Anglestheta2	Anglestheta3	PsiAngle1	PsiAngle2	PsiAngle3	Nucleation1	Nucleation2	Nucleation3
@@ -12122,6 +12194,8 @@ KAPPA	0.23
 GAMMA0	1
 Y	5.66
 NUMBER OF CELLS	50
+NUCLEATIONTHRESHOLD	1.4
+NUCLEATIONBASECRITERIA	0
 endGlobal
 Vertices
 id	x	y	Anglestheta1	Anglestheta2	Anglestheta3	PsiAngle1	PsiAngle2	PsiAngle3	Nucleation1	Nucleation2	Nucleation3
@@ -12458,6 +12532,8 @@ KAPPA	0.23
 GAMMA0	1
 Y	5.66
 NUMBER OF CELLS	50
+NUCLEATIONTHRESHOLD	1.4
+NUCLEATIONBASECRITERIA	0
 endGlobal
 Vertices
 id	x	y	Anglestheta1	Anglestheta2	Anglestheta3	PsiAngle1	PsiAngle2	PsiAngle3	Nucleation1	Nucleation2	Nucleation3
@@ -12794,6 +12870,8 @@ KAPPA	0.23
 GAMMA0	1
 Y	5.66
 NUMBER OF CELLS	50
+NUCLEATIONTHRESHOLD	1.4
+NUCLEATIONBASECRITERIA	0
 endGlobal
 Vertices
 id	x	y	Anglestheta1	Anglestheta2	Anglestheta3	PsiAngle1	PsiAngle2	PsiAngle3	Nucleation1	Nucleation2	Nucleation3
@@ -13130,6 +13208,8 @@ KAPPA	0.23
 GAMMA0	1
 Y	5.66
 NUMBER OF CELLS	50
+NUCLEATIONTHRESHOLD	1.4
+NUCLEATIONBASECRITERIA	0
 endGlobal
 Vertices
 id	x	y	Anglestheta1	Anglestheta2	Anglestheta3	PsiAngle1	PsiAngle2	PsiAngle3	Nucleation1	Nucleation2	Nucleation3
@@ -13466,6 +13546,8 @@ KAPPA	0.23
 GAMMA0	1
 Y	5.66
 NUMBER OF CELLS	50
+NUCLEATIONTHRESHOLD	1.4
+NUCLEATIONBASECRITERIA	0
 endGlobal
 Vertices
 id	x	y	Anglestheta1	Anglestheta2	Anglestheta3	PsiAngle1	PsiAngle2	PsiAngle3	Nucleation1	Nucleation2	Nucleation3
@@ -13802,6 +13884,8 @@ KAPPA	0.23
 GAMMA0	1
 Y	5.66
 NUMBER OF CELLS	50
+NUCLEATIONTHRESHOLD	1.4
+NUCLEATIONBASECRITERIA	0
 endGlobal
 Vertices
 id	x	y	Anglestheta1	Anglestheta2	Anglestheta3	PsiAngle1	PsiAngle2	PsiAngle3	Nucleation1	Nucleation2	Nucleation3
@@ -14138,6 +14222,8 @@ KAPPA	0.23
 GAMMA0	1
 Y	5.66
 NUMBER OF CELLS	50
+NUCLEATIONTHRESHOLD	1.4
+NUCLEATIONBASECRITERIA	0
 endGlobal
 Vertices
 id	x	y	Anglestheta1	Anglestheta2	Anglestheta3	PsiAngle1	PsiAngle2	PsiAngle3	Nucleation1	Nucleation2	Nucleation3
@@ -14474,6 +14560,8 @@ KAPPA	0.23
 GAMMA0	1
 Y	5.66
 NUMBER OF CELLS	50
+NUCLEATIONTHRESHOLD	1.4
+NUCLEATIONBASECRITERIA	0
 endGlobal
 Vertices
 id	x	y	Anglestheta1	Anglestheta2	Anglestheta3	PsiAngle1	PsiAngle2	PsiAngle3	Nucleation1	Nucleation2	Nucleation3
@@ -14810,6 +14898,8 @@ KAPPA	0.23
 GAMMA0	1
 Y	5.66
 NUMBER OF CELLS	50
+NUCLEATIONTHRESHOLD	1.4
+NUCLEATIONBASECRITERIA	0
 endGlobal
 Vertices
 id	x	y	Anglestheta1	Anglestheta2	Anglestheta3	PsiAngle1	PsiAngle2	PsiAngle3	Nucleation1	Nucleation2	Nucleation3
@@ -15146,6 +15236,8 @@ KAPPA	0.23
 GAMMA0	1
 Y	5.66
 NUMBER OF CELLS	50
+NUCLEATIONTHRESHOLD	1.4
+NUCLEATIONBASECRITERIA	0
 endGlobal
 Vertices
 id	x	y	Anglestheta1	Anglestheta2	Anglestheta3	PsiAngle1	PsiAngle2	PsiAngle3	Nucleation1	Nucleation2	Nucleation3
@@ -15482,6 +15574,8 @@ KAPPA	0.23
 GAMMA0	1
 Y	5.66
 NUMBER OF CELLS	50
+NUCLEATIONTHRESHOLD	1.4
+NUCLEATIONBASECRITERIA	0
 endGlobal
 Vertices
 id	x	y	Anglestheta1	Anglestheta2	Anglestheta3	PsiAngle1	PsiAngle2	PsiAngle3	Nucleation1	Nucleation2	Nucleation3
@@ -15818,6 +15912,8 @@ KAPPA	0.23
 GAMMA0	1
 Y	5.66
 NUMBER OF CELLS	50
+NUCLEATIONTHRESHOLD	1.4
+NUCLEATIONBASECRITERIA	0
 endGlobal
 Vertices
 id	x	y	Anglestheta1	Anglestheta2	Anglestheta3	PsiAngle1	PsiAngle2	PsiAngle3	Nucleation1	Nucleation2	Nucleation3
@@ -16154,6 +16250,8 @@ KAPPA	0.23
 GAMMA0	1
 Y	5.66
 NUMBER OF CELLS	50
+NUCLEATIONTHRESHOLD	1.4
+NUCLEATIONBASECRITERIA	0
 endGlobal
 Vertices
 id	x	y	Anglestheta1	Anglestheta2	Anglestheta3	PsiAngle1	PsiAngle2	PsiAngle3	Nucleation1	Nucleation2	Nucleation3
@@ -16490,6 +16588,8 @@ KAPPA	0.23
 GAMMA0	1
 Y	5.66
 NUMBER OF CELLS	50
+NUCLEATIONTHRESHOLD	1.4
+NUCLEATIONBASECRITERIA	0
 endGlobal
 Vertices
 id	x	y	Anglestheta1	Anglestheta2	Anglestheta3	PsiAngle1	PsiAngle2	PsiAngle3	Nucleation1	Nucleation2	Nucleation3
@@ -16826,6 +16926,8 @@ KAPPA	0.23
 GAMMA0	1
 Y	5.66
 NUMBER OF CELLS	50
+NUCLEATIONTHRESHOLD	1.4
+NUCLEATIONBASECRITERIA	0
 endGlobal
 Vertices
 id	x	y	Anglestheta1	Anglestheta2	Anglestheta3	PsiAngle1	PsiAngle2	PsiAngle3	Nucleation1	Nucleation2	Nucleation3
@@ -17162,6 +17264,8 @@ KAPPA	0.23
 GAMMA0	1
 Y	5.66
 NUMBER OF CELLS	50
+NUCLEATIONTHRESHOLD	1.4
+NUCLEATIONBASECRITERIA	0
 endGlobal
 Vertices
 id	x	y	Anglestheta1	Anglestheta2	Anglestheta3	PsiAngle1	PsiAngle2	PsiAngle3	Nucleation1	Nucleation2	Nucleation3
@@ -17498,6 +17602,8 @@ KAPPA	0.23
 GAMMA0	1
 Y	5.66
 NUMBER OF CELLS	50
+NUCLEATIONTHRESHOLD	1.4
+NUCLEATIONBASECRITERIA	0
 endGlobal
 Vertices
 id	x	y	Anglestheta1	Anglestheta2	Anglestheta3	PsiAngle1	PsiAngle2	PsiAngle3	Nucleation1	Nucleation2	Nucleation3
@@ -17834,6 +17940,8 @@ KAPPA	0.23
 GAMMA0	1
 Y	5.66
 NUMBER OF CELLS	50
+NUCLEATIONTHRESHOLD	1.4
+NUCLEATIONBASECRITERIA	0
 endGlobal
 Vertices
 id	x	y	Anglestheta1	Anglestheta2	Anglestheta3	PsiAngle1	PsiAngle2	PsiAngle3	Nucleation1	Nucleation2	Nucleation3
@@ -18170,6 +18278,8 @@ KAPPA	0.23
 GAMMA0	1
 Y	5.66
 NUMBER OF CELLS	50
+NUCLEATIONTHRESHOLD	1.4
+NUCLEATIONBASECRITERIA	0
 endGlobal
 Vertices
 id	x	y	Anglestheta1	Anglestheta2	Anglestheta3	PsiAngle1	PsiAngle2	PsiAngle3	Nucleation1	Nucleation2	Nucleation3
@@ -18506,6 +18616,8 @@ KAPPA	0.23
 GAMMA0	1
 Y	5.66
 NUMBER OF CELLS	50
+NUCLEATIONTHRESHOLD	1.4
+NUCLEATIONBASECRITERIA	0
 endGlobal
 Vertices
 id	x	y	Anglestheta1	Anglestheta2	Anglestheta3	PsiAngle1	PsiAngle2	PsiAngle3	Nucleation1	Nucleation2	Nucleation3
@@ -18842,6 +18954,8 @@ KAPPA	0.23
 GAMMA0	1
 Y	5.66
 NUMBER OF CELLS	50
+NUCLEATIONTHRESHOLD	1.4
+NUCLEATIONBASECRITERIA	0
 endGlobal
 Vertices
 id	x	y	Anglestheta1	Anglestheta2	Anglestheta3	PsiAngle1	PsiAngle2	PsiAngle3	Nucleation1	Nucleation2	Nucleation3
@@ -19178,6 +19292,8 @@ KAPPA	0.23
 GAMMA0	1
 Y	5.66
 NUMBER OF CELLS	50
+NUCLEATIONTHRESHOLD	1.4
+NUCLEATIONBASECRITERIA	0
 endGlobal
 Vertices
 id	x	y	Anglestheta1	Anglestheta2	Anglestheta3	PsiAngle1	PsiAngle2	PsiAngle3	Nucleation1	Nucleation2	Nucleation3
@@ -19514,6 +19630,8 @@ KAPPA	0.23
 GAMMA0	1
 Y	5.66
 NUMBER OF CELLS	50
+NUCLEATIONTHRESHOLD	1.4
+NUCLEATIONBASECRITERIA	0
 endGlobal
 Vertices
 id	x	y	Anglestheta1	Anglestheta2	Anglestheta3	PsiAngle1	PsiAngle2	PsiAngle3	Nucleation1	Nucleation2	Nucleation3
@@ -19850,6 +19968,8 @@ KAPPA	0.23
 GAMMA0	1
 Y	5.66
 NUMBER OF CELLS	50
+NUCLEATIONTHRESHOLD	1.4
+NUCLEATIONBASECRITERIA	0
 endGlobal
 Vertices
 id	x	y	Anglestheta1	Anglestheta2	Anglestheta3	PsiAngle1	PsiAngle2	PsiAngle3	Nucleation1	Nucleation2	Nucleation3
@@ -20186,6 +20306,8 @@ KAPPA	0.23
 GAMMA0	1
 Y	5.66
 NUMBER OF CELLS	50
+NUCLEATIONTHRESHOLD	1.4
+NUCLEATIONBASECRITERIA	0
 endGlobal
 Vertices
 id	x	y	Anglestheta1	Anglestheta2	Anglestheta3	PsiAngle1	PsiAngle2	PsiAngle3	Nucleation1	Nucleation2	Nucleation3
@@ -20522,6 +20644,8 @@ KAPPA	0.23
 GAMMA0	1
 Y	5.66
 NUMBER OF CELLS	50
+NUCLEATIONTHRESHOLD	1.4
+NUCLEATIONBASECRITERIA	0
 endGlobal
 Vertices
 id	x	y	Anglestheta1	Anglestheta2	Anglestheta3	PsiAngle1	PsiAngle2	PsiAngle3	Nucleation1	Nucleation2	Nucleation3
@@ -20858,6 +20982,8 @@ KAPPA	0.23
 GAMMA0	1
 Y	5.66
 NUMBER OF CELLS	50
+NUCLEATIONTHRESHOLD	1.4
+NUCLEATIONBASECRITERIA	0
 endGlobal
 Vertices
 id	x	y	Anglestheta1	Anglestheta2	Anglestheta3	PsiAngle1	PsiAngle2	PsiAngle3	Nucleation1	Nucleation2	Nucleation3
@@ -21194,6 +21320,8 @@ KAPPA	0.23
 GAMMA0	1
 Y	5.66
 NUMBER OF CELLS	50
+NUCLEATIONTHRESHOLD	1.4
+NUCLEATIONBASECRITERIA	0
 endGlobal
 Vertices
 id	x	y	Anglestheta1	Anglestheta2	Anglestheta3	PsiAngle1	PsiAngle2	PsiAngle3	Nucleation1	Nucleation2	Nucleation3
@@ -21530,6 +21658,8 @@ KAPPA	0.23
 GAMMA0	1
 Y	5.66
 NUMBER OF CELLS	50
+NUCLEATIONTHRESHOLD	1.4
+NUCLEATIONBASECRITERIA	0
 endGlobal
 Vertices
 id	x	y	Anglestheta1	Anglestheta2	Anglestheta3	PsiAngle1	PsiAngle2	PsiAngle3	Nucleation1	Nucleation2	Nucleation3
@@ -21866,6 +21996,8 @@ KAPPA	0.23
 GAMMA0	1
 Y	5.66
 NUMBER OF CELLS	50
+NUCLEATIONTHRESHOLD	1.4
+NUCLEATIONBASECRITERIA	0
 endGlobal
 Vertices
 id	x	y	Anglestheta1	Anglestheta2	Anglestheta3	PsiAngle1	PsiAngle2	PsiAngle3	Nucleation1	Nucleation2	Nucleation3
@@ -22202,6 +22334,8 @@ KAPPA	0.23
 GAMMA0	1
 Y	5.66
 NUMBER OF CELLS	50
+NUCLEATIONTHRESHOLD	1.4
+NUCLEATIONBASECRITERIA	0
 endGlobal
 Vertices
 id	x	y	Anglestheta1	Anglestheta2	Anglestheta3	PsiAngle1	PsiAngle2	PsiAngle3	Nucleation1	Nucleation2	Nucleation3
@@ -22538,6 +22672,8 @@ KAPPA	0.23
 GAMMA0	1
 Y	5.66
 NUMBER OF CELLS	50
+NUCLEATIONTHRESHOLD	1.4
+NUCLEATIONBASECRITERIA	0
 endGlobal
 Vertices
 id	x	y	Anglestheta1	Anglestheta2	Anglestheta3	PsiAngle1	PsiAngle2	PsiAngle3	Nucleation1	Nucleation2	Nucleation3
@@ -22874,6 +23010,8 @@ KAPPA	0.23
 GAMMA0	1
 Y	5.66
 NUMBER OF CELLS	50
+NUCLEATIONTHRESHOLD	1.4
+NUCLEATIONBASECRITERIA	0
 endGlobal
 Vertices
 id	x	y	Anglestheta1	Anglestheta2	Anglestheta3	PsiAngle1	PsiAngle2	PsiAngle3	Nucleation1	Nucleation2	Nucleation3
@@ -23210,6 +23348,8 @@ KAPPA	0.23
 GAMMA0	1
 Y	5.66
 NUMBER OF CELLS	50
+NUCLEATIONTHRESHOLD	1.4
+NUCLEATIONBASECRITERIA	0
 endGlobal
 Vertices
 id	x	y	Anglestheta1	Anglestheta2	Anglestheta3	PsiAngle1	PsiAngle2	PsiAngle3	Nucleation1	Nucleation2	Nucleation3
@@ -23546,6 +23686,8 @@ KAPPA	0.23
 GAMMA0	1
 Y	5.66
 NUMBER OF CELLS	50
+NUCLEATIONTHRESHOLD	1.4
+NUCLEATIONBASECRITERIA	0
 endGlobal
 Vertices
 id	x	y	Anglestheta1	Anglestheta2	Anglestheta3	PsiAngle1	PsiAngle2	PsiAngle3	Nucleation1	Nucleation2	Nucleation3
@@ -23882,6 +24024,8 @@ KAPPA	0.23
 GAMMA0	1
 Y	5.66
 NUMBER OF CELLS	50
+NUCLEATIONTHRESHOLD	1.4
+NUCLEATIONBASECRITERIA	0
 endGlobal
 Vertices
 id	x	y	Anglestheta1	Anglestheta2	Anglestheta3	PsiAngle1	PsiAngle2	PsiAngle3	Nucleation1	Nucleation2	Nucleation3
@@ -24218,6 +24362,8 @@ KAPPA	0.23
 GAMMA0	1
 Y	5.66
 NUMBER OF CELLS	50
+NUCLEATIONTHRESHOLD	1.4
+NUCLEATIONBASECRITERIA	0
 endGlobal
 Vertices
 id	x	y	Anglestheta1	Anglestheta2	Anglestheta3	PsiAngle1	PsiAngle2	PsiAngle3	Nucleation1	Nucleation2	Nucleation3
@@ -24554,6 +24700,8 @@ KAPPA	0.23
 GAMMA0	1
 Y	5.66
 NUMBER OF CELLS	50
+NUCLEATIONTHRESHOLD	1.4
+NUCLEATIONBASECRITERIA	0
 endGlobal
 Vertices
 id	x	y	Anglestheta1	Anglestheta2	Anglestheta3	PsiAngle1	PsiAngle2	PsiAngle3	Nucleation1	Nucleation2	Nucleation3
@@ -24890,6 +25038,8 @@ KAPPA	0.23
 GAMMA0	1
 Y	5.66
 NUMBER OF CELLS	50
+NUCLEATIONTHRESHOLD	1.4
+NUCLEATIONBASECRITERIA	0
 endGlobal
 Vertices
 id	x	y	Anglestheta1	Anglestheta2	Anglestheta3	PsiAngle1	PsiAngle2	PsiAngle3	Nucleation1	Nucleation2	Nucleation3
@@ -25226,6 +25376,8 @@ KAPPA	0.23
 GAMMA0	1
 Y	5.66
 NUMBER OF CELLS	50
+NUCLEATIONTHRESHOLD	1.4
+NUCLEATIONBASECRITERIA	0
 endGlobal
 Vertices
 id	x	y	Anglestheta1	Anglestheta2	Anglestheta3	PsiAngle1	PsiAngle2	PsiAngle3	Nucleation1	Nucleation2	Nucleation3
@@ -25562,6 +25714,8 @@ KAPPA	0.23
 GAMMA0	1
 Y	5.66
 NUMBER OF CELLS	50
+NUCLEATIONTHRESHOLD	1.4
+NUCLEATIONBASECRITERIA	0
 endGlobal
 Vertices
 id	x	y	Anglestheta1	Anglestheta2	Anglestheta3	PsiAngle1	PsiAngle2	PsiAngle3	Nucleation1	Nucleation2	Nucleation3
@@ -25898,6 +26052,8 @@ KAPPA	0.23
 GAMMA0	1
 Y	5.66
 NUMBER OF CELLS	50
+NUCLEATIONTHRESHOLD	1.4
+NUCLEATIONBASECRITERIA	0
 endGlobal
 Vertices
 id	x	y	Anglestheta1	Anglestheta2	Anglestheta3	PsiAngle1	PsiAngle2	PsiAngle3	Nucleation1	Nucleation2	Nucleation3
@@ -26234,6 +26390,8 @@ KAPPA	0.23
 GAMMA0	1
 Y	5.66
 NUMBER OF CELLS	50
+NUCLEATIONTHRESHOLD	1.4
+NUCLEATIONBASECRITERIA	0
 endGlobal
 Vertices
 id	x	y	Anglestheta1	Anglestheta2	Anglestheta3	PsiAngle1	PsiAngle2	PsiAngle3	Nucleation1	Nucleation2	Nucleation3
@@ -26570,6 +26728,8 @@ KAPPA	0.23
 GAMMA0	1
 Y	5.66
 NUMBER OF CELLS	50
+NUCLEATIONTHRESHOLD	1.4
+NUCLEATIONBASECRITERIA	0
 endGlobal
 Vertices
 id	x	y	Anglestheta1	Anglestheta2	Anglestheta3	PsiAngle1	PsiAngle2	PsiAngle3	Nucleation1	Nucleation2	Nucleation3
@@ -26906,6 +27066,8 @@ KAPPA	0.23
 GAMMA0	1
 Y	5.66
 NUMBER OF CELLS	50
+NUCLEATIONTHRESHOLD	1.4
+NUCLEATIONBASECRITERIA	0
 endGlobal
 Vertices
 id	x	y	Anglestheta1	Anglestheta2	Anglestheta3	PsiAngle1	PsiAngle2	PsiAngle3	Nucleation1	Nucleation2	Nucleation3
@@ -27242,6 +27404,8 @@ KAPPA	0.23
 GAMMA0	1
 Y	5.66
 NUMBER OF CELLS	50
+NUCLEATIONTHRESHOLD	1.4
+NUCLEATIONBASECRITERIA	0
 endGlobal
 Vertices
 id	x	y	Anglestheta1	Anglestheta2	Anglestheta3	PsiAngle1	PsiAngle2	PsiAngle3	Nucleation1	Nucleation2	Nucleation3
@@ -27578,6 +27742,8 @@ KAPPA	0.23
 GAMMA0	1
 Y	5.66
 NUMBER OF CELLS	50
+NUCLEATIONTHRESHOLD	1.4
+NUCLEATIONBASECRITERIA	0
 endGlobal
 Vertices
 id	x	y	Anglestheta1	Anglestheta2	Anglestheta3	PsiAngle1	PsiAngle2	PsiAngle3	Nucleation1	Nucleation2	Nucleation3
@@ -27914,6 +28080,8 @@ KAPPA	0.23
 GAMMA0	1
 Y	5.66
 NUMBER OF CELLS	50
+NUCLEATIONTHRESHOLD	1.4
+NUCLEATIONBASECRITERIA	0
 endGlobal
 Vertices
 id	x	y	Anglestheta1	Anglestheta2	Anglestheta3	PsiAngle1	PsiAngle2	PsiAngle3	Nucleation1	Nucleation2	Nucleation3
@@ -28250,6 +28418,8 @@ KAPPA	0.23
 GAMMA0	1
 Y	5.66
 NUMBER OF CELLS	50
+NUCLEATIONTHRESHOLD	1.4
+NUCLEATIONBASECRITERIA	0
 endGlobal
 Vertices
 id	x	y	Anglestheta1	Anglestheta2	Anglestheta3	PsiAngle1	PsiAngle2	PsiAngle3	Nucleation1	Nucleation2	Nucleation3
@@ -28586,6 +28756,8 @@ KAPPA	0.23
 GAMMA0	1
 Y	5.66
 NUMBER OF CELLS	50
+NUCLEATIONTHRESHOLD	1.4
+NUCLEATIONBASECRITERIA	0
 endGlobal
 Vertices
 id	x	y	Anglestheta1	Anglestheta2	Anglestheta3	PsiAngle1	PsiAngle2	PsiAngle3	Nucleation1	Nucleation2	Nucleation3
@@ -28922,6 +29094,8 @@ KAPPA	0.23
 GAMMA0	1
 Y	5.66
 NUMBER OF CELLS	50
+NUCLEATIONTHRESHOLD	1.4
+NUCLEATIONBASECRITERIA	0
 endGlobal
 Vertices
 id	x	y	Anglestheta1	Anglestheta2	Anglestheta3	PsiAngle1	PsiAngle2	PsiAngle3	Nucleation1	Nucleation2	Nucleation3
@@ -29258,6 +29432,8 @@ KAPPA	0.23
 GAMMA0	1
 Y	5.66
 NUMBER OF CELLS	50
+NUCLEATIONTHRESHOLD	1.4
+NUCLEATIONBASECRITERIA	0
 endGlobal
 Vertices
 id	x	y	Anglestheta1	Anglestheta2	Anglestheta3	PsiAngle1	PsiAngle2	PsiAngle3	Nucleation1	Nucleation2	Nucleation3
@@ -29594,6 +29770,8 @@ KAPPA	0.23
 GAMMA0	1
 Y	5.66
 NUMBER OF CELLS	50
+NUCLEATIONTHRESHOLD	1.4
+NUCLEATIONBASECRITERIA	0
 endGlobal
 Vertices
 id	x	y	Anglestheta1	Anglestheta2	Anglestheta3	PsiAngle1	PsiAngle2	PsiAngle3	Nucleation1	Nucleation2	Nucleation3
@@ -29930,6 +30108,8 @@ KAPPA	0.23
 GAMMA0	1
 Y	5.66
 NUMBER OF CELLS	50
+NUCLEATIONTHRESHOLD	1.4
+NUCLEATIONBASECRITERIA	0
 endGlobal
 Vertices
 id	x	y	Anglestheta1	Anglestheta2	Anglestheta3	PsiAngle1	PsiAngle2	PsiAngle3	Nucleation1	Nucleation2	Nucleation3
@@ -30266,6 +30446,8 @@ KAPPA	0.23
 GAMMA0	1
 Y	5.66
 NUMBER OF CELLS	50
+NUCLEATIONTHRESHOLD	1.4
+NUCLEATIONBASECRITERIA	0
 endGlobal
 Vertices
 id	x	y	Anglestheta1	Anglestheta2	Anglestheta3	PsiAngle1	PsiAngle2	PsiAngle3	Nucleation1	Nucleation2	Nucleation3
@@ -30602,6 +30784,8 @@ KAPPA	0.23
 GAMMA0	1
 Y	5.66
 NUMBER OF CELLS	50
+NUCLEATIONTHRESHOLD	1.4
+NUCLEATIONBASECRITERIA	0
 endGlobal
 Vertices
 id	x	y	Anglestheta1	Anglestheta2	Anglestheta3	PsiAngle1	PsiAngle2	PsiAngle3	Nucleation1	Nucleation2	Nucleation3
@@ -30938,6 +31122,8 @@ KAPPA	0.23
 GAMMA0	1
 Y	5.66
 NUMBER OF CELLS	50
+NUCLEATIONTHRESHOLD	1.4
+NUCLEATIONBASECRITERIA	0
 endGlobal
 Vertices
 id	x	y	Anglestheta1	Anglestheta2	Anglestheta3	PsiAngle1	PsiAngle2	PsiAngle3	Nucleation1	Nucleation2	Nucleation3
@@ -31274,6 +31460,8 @@ KAPPA	0.23
 GAMMA0	1
 Y	5.66
 NUMBER OF CELLS	50
+NUCLEATIONTHRESHOLD	1.4
+NUCLEATIONBASECRITERIA	0
 endGlobal
 Vertices
 id	x	y	Anglestheta1	Anglestheta2	Anglestheta3	PsiAngle1	PsiAngle2	PsiAngle3	Nucleation1	Nucleation2	Nucleation3
@@ -31610,6 +31798,8 @@ KAPPA	0.23
 GAMMA0	1
 Y	5.66
 NUMBER OF CELLS	50
+NUCLEATIONTHRESHOLD	1.4
+NUCLEATIONBASECRITERIA	0
 endGlobal
 Vertices
 id	x	y	Anglestheta1	Anglestheta2	Anglestheta3	PsiAngle1	PsiAngle2	PsiAngle3	Nucleation1	Nucleation2	Nucleation3
@@ -31946,6 +32136,8 @@ KAPPA	0.23
 GAMMA0	1
 Y	5.66
 NUMBER OF CELLS	50
+NUCLEATIONTHRESHOLD	1.4
+NUCLEATIONBASECRITERIA	0
 endGlobal
 Vertices
 id	x	y	Anglestheta1	Anglestheta2	Anglestheta3	PsiAngle1	PsiAngle2	PsiAngle3	Nucleation1	Nucleation2	Nucleation3
@@ -32282,6 +32474,8 @@ KAPPA	0.23
 GAMMA0	1
 Y	5.66
 NUMBER OF CELLS	50
+NUCLEATIONTHRESHOLD	1.4
+NUCLEATIONBASECRITERIA	0
 endGlobal
 Vertices
 id	x	y	Anglestheta1	Anglestheta2	Anglestheta3	PsiAngle1	PsiAngle2	PsiAngle3	Nucleation1	Nucleation2	Nucleation3
@@ -32618,6 +32812,8 @@ KAPPA	0.23
 GAMMA0	1
 Y	5.66
 NUMBER OF CELLS	50
+NUCLEATIONTHRESHOLD	1.4
+NUCLEATIONBASECRITERIA	0
 endGlobal
 Vertices
 id	x	y	Anglestheta1	Anglestheta2	Anglestheta3	PsiAngle1	PsiAngle2	PsiAngle3	Nucleation1	Nucleation2	Nucleation3
@@ -32954,6 +33150,8 @@ KAPPA	0.23
 GAMMA0	1
 Y	5.66
 NUMBER OF CELLS	50
+NUCLEATIONTHRESHOLD	1.4
+NUCLEATIONBASECRITERIA	0
 endGlobal
 Vertices
 id	x	y	Anglestheta1	Anglestheta2	Anglestheta3	PsiAngle1	PsiAngle2	PsiAngle3	Nucleation1	Nucleation2	Nucleation3
@@ -33290,6 +33488,8 @@ KAPPA	0.23
 GAMMA0	1
 Y	5.66
 NUMBER OF CELLS	50
+NUCLEATIONTHRESHOLD	1.4
+NUCLEATIONBASECRITERIA	0
 endGlobal
 Vertices
 id	x	y	Anglestheta1	Anglestheta2	Anglestheta3	PsiAngle1	PsiAngle2	PsiAngle3	Nucleation1	Nucleation2	Nucleation3
@@ -33626,6 +33826,8 @@ KAPPA	0.23
 GAMMA0	1
 Y	5.66
 NUMBER OF CELLS	50
+NUCLEATIONTHRESHOLD	1.4
+NUCLEATIONBASECRITERIA	0
 endGlobal
 Vertices
 id	x	y	Anglestheta1	Anglestheta2	Anglestheta3	PsiAngle1	PsiAngle2	PsiAngle3	Nucleation1	Nucleation2	Nucleation3
@@ -33962,6 +34164,8 @@ KAPPA	0.23
 GAMMA0	1
 Y	5.66
 NUMBER OF CELLS	50
+NUCLEATIONTHRESHOLD	1.4
+NUCLEATIONBASECRITERIA	0
 endGlobal
 Vertices
 id	x	y	Anglestheta1	Anglestheta2	Anglestheta3	PsiAngle1	PsiAngle2	PsiAngle3	Nucleation1	Nucleation2	Nucleation3
@@ -34298,6 +34502,8 @@ KAPPA	0.23
 GAMMA0	1
 Y	5.66
 NUMBER OF CELLS	50
+NUCLEATIONTHRESHOLD	1.4
+NUCLEATIONBASECRITERIA	0
 endGlobal
 Vertices
 id	x	y	Anglestheta1	Anglestheta2	Anglestheta3	PsiAngle1	PsiAngle2	PsiAngle3	Nucleation1	Nucleation2	Nucleation3
