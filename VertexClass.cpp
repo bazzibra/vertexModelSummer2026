@@ -99,6 +99,8 @@ void Vertex::ComputeVertexAngles() {
 	int nEdges = evec.size();
 	if (nEdges < 2) return;
 
+	vector<pair<Edge*, Vect>> edgeVecs;
+
 	// ---------------------------------------------------
 	// Compute unit edge vectors using PBC-aware function
 	// ---------------------------------------------------
@@ -115,32 +117,28 @@ void Vertex::ComputeVertexAngles() {
 		double mag = diff.Magnitude();
 		if (mag == 0) continue;
 
-		edgeVectors.push_back(diff / mag);
+		edgeVecs.push_back({e, diff / mag});
 	}
 
-	if (edgeVectors.size() < 2) return;
+	if (edgeVecs.size() < 2) return;
 
 	// ---------------------------------------------------
 	// Sort vectors CCW
 	// ---------------------------------------------------
-	std::sort(edgeVectors.begin(), edgeVectors.end(),
-		[](const Vect& a, const Vect& b) {
-
-			double angleA = atan2(a.y, a.x);
-			double angleB = atan2(b.y, b.x);
-
-			return angleA < angleB;
-		});
+    sort(edgeVecs.begin(), edgeVecs.end(),
+        [](const pair<Edge*, Vect>& a, const pair<Edge*, Vect>& b) {
+            return atan2(a.second.y, a.second.x) < atan2(b.second.y, b.second.x);
+        });
 
 	// ---------------------------------------------------
 	// Compute interior angles (theta)
 	// ---------------------------------------------------
-	int n = edgeVectors.size();
+	int n = static_cast<int>(edgeVecs.size());
 
 	for (int i = 0; i < n; i++) {
 
-		Vect v1 = edgeVectors[i];
-		Vect v2 = edgeVectors[(i + 1) % n];
+		Vect v1 = edgeVecs[i].second;
+        Vect v2 = edgeVecs[(i + 1) % n].second;
 
 		double cross = v1.x * v2.y - v1.y * v2.x;
 		double dot = v1.DotProduct(v2);
@@ -158,8 +156,8 @@ void Vertex::ComputeVertexAngles() {
 	// ---------------------------------------------------
 	for (int i = 0; i < n; i++) {
 
-		Vect v1 = edgeVectors[i];
-		Vect v2 = edgeVectors[(i + 1) % n];
+		Vect v1 = edgeVecs[i].second;
+        Vect v2 = edgeVecs[(i + 1) % n].second;
 
 		Vect bisector = v1 + v2;
 
@@ -180,6 +178,27 @@ void Vertex::ComputeVertexAngles() {
 	}
 
 	// ---------------------------------------------------
+	// Compute nucleation
+	// ---------------------------------------------------
+
+	vector<bool> nucleation;
+
+	for (int i = 0; i < n; i++) {
+
+		Edge* e1 = edgeVecs[i].first;
+        Edge* e2 = edgeVecs[(i + 1) % n].first;
+
+		if(e1->GetTension_ForceOnVertex(this).Magnitude() > 0.0 && e2->GetTension_ForceOnVertex(this).Magnitude() > 0.0){
+			nucleation.push_back(1);
+		}
+		else{
+			nucleation.push_back(0);
+		}
+		
+	}
+
+
+	// ---------------------------------------------------
 	// Debug output
 	// ---------------------------------------------------
 	cout << "Vertex " << id << " theta angles: ";
@@ -187,6 +206,9 @@ void Vertex::ComputeVertexAngles() {
 
 	cout << "\nVertex " << id << " psi angles: ";
 	for (double a : psi) cout << a << " ";
+
+	cout << "\nVertex " << id << " nucleation ";
+	for (double a : nucleation) cout << a << " ";
 
 	cout << endl;
 }
