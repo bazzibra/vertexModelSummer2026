@@ -7,8 +7,8 @@ clear; clc;
 %% =========================
 % USER INPUT
 %% =========================
-inputFile  = '12_out.txt';
-outputFile = '12_lasttimestep.txt';
+inputFile  = 'RFB_NbPts_0050_rng_2031_pot_ani_lim_320_relaxed_out.txt';
+outputFile = 'RFB_NbPts_0050_rng_2031_pot_ani_lim_320_relaxed_out_lasttimestep.txt';
 
 %% =========================
 % READ FILE

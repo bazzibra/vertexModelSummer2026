@@ -47,7 +47,11 @@ LAMBDA = 27.912724;
 Ratio = 0.300000; 
 
 % Equilibrium tolerance
-equilibriumtolerance = 1.000000e-11; 
+equilibriumtolerance = 1.000000e-11;
+
+%aSF Nucleation Conditions
+NUCLEATIONTHRESHOLD = 1.4;
+NUCLEATIONBASECRITERIA = true;
 
 % Cell properties
 CELLPRESSURETYPE = cpt;
@@ -191,6 +195,8 @@ fprintf(fid, 'ALPHAM\t%f\n', ALPHAM);
 fprintf(fid, 'TISSUE_EXT_STRESS_X\t%f\n', TISSUE_EXT_STRESS_X);
 fprintf(fid, 'TISSUE_EXT_STRESS_Y\t%f\n', TISSUE_EXT_STRESS_Y);
 fprintf(fid, 'equilibriumtolerance\t%e\n', equilibriumtolerance);
+fprintf(fid, 'NUCLEATIONTHRESHOLD\t%f\n', NUCLEATIONTHRESHOLD);
+fprintf(fid, 'NUCLEATIONBASECRITERIA\t%e\n', NUCLEATIONBASECRITERIA);
 fprintf(fid, 'endGlobal\n');
 
 fprintf(fid, 'Vertices\n');
