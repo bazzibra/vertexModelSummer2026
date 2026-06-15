@@ -114,7 +114,7 @@ VertexData = struct( ...
     'Anglestheta1', Pre, 'Anglestheta2', Pre, 'Anglestheta3', Pre, ...
     'PsiAngle1', Pre, 'PsiAngle2', Pre, 'PsiAngle3', Pre, ...
     'Tmin12', Pre, 'Tmin13', Pre, 'Tmin23', Pre, ...
-    'WeakestPairMin', Pre, 'EdgesNumber', Pre);
+    'WeakestPairMin', Pre, 'EdgesNumber', Pre, 'Nucleation1', Pre, 'Nucleation2', Pre, 'Nucleation3', Pre);
 
 % Extract vertex id, x, y, angles and all pair tensions
 for i = 1:nFields
@@ -182,6 +182,15 @@ for i = 1:nFields
 
         case 'WeakestPairMin'
             VertexData(1).WeakestPairMin = VData(:,i);
+        
+        case 'Nucleation1'
+            VertexData(1).Nucleation1 = VData(:,i);
+            
+        case 'Nucleation2'
+            VertexData(1).Nucleation2 = VData(:,i);
+            
+        case 'Nucleation3'
+            VertexData(1).Nucleation3 = VData(:,i);
 
         %case 'EdgesNumber'
         %   VertexData(1).EdgesNumber = VData(:,i);

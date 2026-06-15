@@ -1,4 +1,6 @@
 *.o
+*.asv
+*.tif
 my_program_AG
 my_program_Dyn
 MainTest.cpp

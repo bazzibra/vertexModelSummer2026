@@ -4,6 +4,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 function CreateMovie_m(inputFileName,tension_bounds)
 
+close all
+
 %% ==========================================================
 % INITIALIZE
 %% ==========================================================
@@ -19,7 +21,7 @@ figure()
 %% ==========================================================
 % USER PARAMETER
 %% ==========================================================
-TENSION_THRESHOLD = 3.226200;   % <<< CHANGE THIS VALUE
+TENSION_THRESHOLD = 1.4;   % <<< CHANGE THIS VALUE
 
 %% ==========================================================
 % GET MAX BOX SIZE
@@ -152,6 +154,21 @@ for i = 1:N
          [V.y(vind1),V.y(vind2)], ...
          'Color', edge_color, ...
          'LineWidth', lw);
+end
+
+%% ======================================
+% PLOT VERTEXES
+%% ======================================
+N = length(V.Nucleation1);
+
+for i = 1:N
+    vertexX = V.x(i);
+    vertexY = V.y(i);
+
+    if(V.Nucleation1(i) || V.Nucleation2(i) || V.Nucleation3(i))
+        viscircles([vertexX vertexY], 1);
+    end
+
 end
 
 %% ======================================
