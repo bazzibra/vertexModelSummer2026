@@ -1,0 +1,12 @@
+\contentsline {section}{\numberline {1}Preface}{1}{}%
+\contentsline {section}{\numberline {2}AGVertex Model}{1}{}%
+\contentsline {section}{\numberline {3}AGPerimVertex Model}{2}{}%
+\contentsline {section}{\numberline {4}Backtracker in the AGPerimVertex Class}{2}{}%
+\contentsline {subsection}{\numberline {4.1}Overshooting the Equilibrium}{2}{}%
+\contentsline {subsection}{\numberline {4.2}The Backtracker}{3}{}%
+\contentsline {section}{\numberline {5}Equilibrium in the Vertex Model}{3}{}%
+\contentsline {section}{\numberline {6}Changing the Vertex Model Energy}{4}{}%
+\contentsline {section}{\numberline {7}Lloyd Iteration}{4}{}%
+\contentsline {section}{\numberline {8}Oscillating T1 calculation}{4}{}%
+\contentsline {section}{\numberline {9}Updating Stability in Vertex Model}{5}{}%
+\contentsline {section}{\numberline {10}Common Problems}{5}{}%
