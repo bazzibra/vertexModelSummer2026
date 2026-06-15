@@ -16,9 +16,10 @@ extern double Y;					//!< Spring constant for GAMMA = Y(l - lo) where l is the c
 extern double EpsilonMax;			//!< Max edge tension before edges undergo a changes in rest length.
 extern double KAPPA;				 //!< Remodeling rate constant for changes in edge rest length
 extern double L0;					//!< Rest length of the edge when it is first created
-extern const double GAMMA0;		//!< GAMMA at the very beginning of the simulation (the const GAMMA the tissue was equilibrated with) 
-
+extern const double GAMMA0;
+extern double NUCLEATIONTHRESHOLD;		//!< GAMMA at the very beginning of the simulation (the const GAMMA the tissue was equilibrated with) 
+extern bool NUCLEATIONBASECRITERIA; 
 #endif
 
-
+ 
 
