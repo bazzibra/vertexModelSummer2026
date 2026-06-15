@@ -161,6 +161,16 @@ void AGTissue::HelperReadInputData_SetGlobalValues(ifstream* datafile) {
 	else { cout << "ERROR: Global variable C4 has multiple definition in input file, used default value C4 = " << C4 << endl; }
 	//******ADD MORE GLOBAL VARIABLES HERE ALSO ADD THEM TO THE CONSTANTS.H FILE AND GIVE THEM A DEFAULT VALUE IN MAIN*********************//
 
+	if (globals.count("NUCLEATIONTHRESHOLD") == 1) { NUCLEATIONTHRESHOLD = atof(globals["NUCLEATIONTHRESHOLD"].c_str()); }
+	else if (globals.count("NUCLEATIONTHRESHOLD") == 0) { cout << "WARNING: NUCLEATIONTHRESHOLD is not given in input file, used default value " << NUCLEATIONTHRESHOLD << endl; }
+	else { cout << "ERROR: Global variable NUCLEATIONTHRESHOLD has multiple definition in input file, used default value NUCLEATIONTHRESHOLD = " << NUCLEATIONTHRESHOLD << endl; }
+
+	if (globals.count("NUCLEATIONBASECRITERIA") == 1) { NUCLEATIONBASECRITERIA = atof(globals["NUCLEATIONBASECRITERIA"].c_str()); }
+	else if (globals.count("NUCLEATIONBASECRITERIA") == 0) { cout << "WARNING: NUCLEATIONBASECRITERIA is not given in input file, used default value " << NUCLEATIONBASECRITERIA << endl; }
+	else { cout << "ERROR: Global variable NUCLEATIONBASECRITERIA has multiple definition in input file, used default value NUCLEATIONBASECRITERIA = " << NUCLEATIONBASECRITERIA << endl; }
+
+
+
 	// setting set the initial box dimensions here
 	LX0 = LX;
 	LY0 = LY;
@@ -438,6 +448,8 @@ void AGTissue::HelperWriteOutputData_Write2File(ofstream* datafile, bool include
 	*datafile << "C4\t" << C4 << endl;
 	*datafile << "NUMBER OF CELLS\t" << cells.size() << endl;
 	//******ADD NEW OUTPUT HERE******//
+	*datafile << "NUCLEATIONTHRESHOLD\t" << NUCLEATIONTHRESHOLD << endl;
+	*datafile << "NUCLEATIONBASECRITERIA\t" << NUCLEATIONBASECRITERIA << endl;
 	*datafile << "endGlobal" << endl;
 
 	if (!includeExtraInfo)											// if flag is false, include only essential information to capture the state of the simulation

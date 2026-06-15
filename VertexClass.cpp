@@ -16,6 +16,7 @@
 #include "EdgeClass.h"
 #include "CellClass.h"
 #include "VertexClass.h"
+#include "DynamicConstants.h"
 
 using namespace std;
 
@@ -189,7 +190,7 @@ void Vertex::ComputeVertexAngles() {
         Edge* e2 = edgeVecs[(i + 1) % n].first;
 		Edge* e3 = edgeVecs[(i + 2) % n].first;
 
-		cout << e1->GetTension_ForceOnVertex(this).Magnitude() << endl;
+		//cout << e1->GetTension_ForceOnVertex(this).Magnitude() << endl;
 
 		if(NucleationHelper(e1, e2, e3)){
 			nucleation.push_back(1);
@@ -221,8 +222,8 @@ bool Vertex::NucleationHelper(Edge* e1, Edge* e2, Edge* e3) {
 	double forceFromEdge2 = e2->GetTension_ForceOnVertex(this).Magnitude();
 	double forceFromEdge3 = e3->GetTension_ForceOnVertex(this).Magnitude();
 	
-	bool useThreeEdge = 0;
-	double threshold = 1.4;
+	bool useThreeEdge = NUCLEATIONBASECRITERIA;
+	double threshold = NUCLEATIONTHRESHOLD;
 
 
 

@@ -174,12 +174,12 @@ void Tissue_Dynamic::HelperReadInputData_SetGlobalValues(ifstream* datafile) {
 	else { cout << "ERROR: Global variable Y has multiple definition in input file, used default value Y = " << Y << endl; }
 
 	if (globals.count("NUCLEATIONTHRESHOLD") == 1) { NUCLEATIONTHRESHOLD = atof(globals["NUCLEATIONTHRESHOLD"].c_str()); }
-	else if (globals.count("C4") == 0) { cout << "WARNING: NUCLEATIONTHRESHOLD is not given in input file, used default value " << NUCLEATIONTHRESHOLD << endl; }
+	else if (globals.count("NUCLEATIONTHRESHOLD") == 0) { cout << "WARNING: NUCLEATIONTHRESHOLD is not given in input file, used default value " << NUCLEATIONTHRESHOLD << endl; }
 	else { cout << "ERROR: Global variable NUCLEATIONTHRESHOLD has multiple definition in input file, used default value NUCLEATIONTHRESHOLD = " << NUCLEATIONTHRESHOLD << endl; }
 
 	if (globals.count("NUCLEATIONBASECRITERIA") == 1) { NUCLEATIONBASECRITERIA = atof(globals["NUCLEATIONBASECRITERIA"].c_str()); }
-	else if (globals.count("C4") == 0) { cout << "WARNING: NUCLEATIONBASECRITERIA is not given in input file, used default value " << NUCLEATIONBASECRITERIA << endl; }
-	else { cout << "ERROR: Global variable NUCLEATIONBASECRITERIA has multiple definition in input file, used default value C4 = " << NUCLEATIONBASECRITERIA << endl; }
+	else if (globals.count("NUCLEATIONBASECRITERIA") == 0) { cout << "WARNING: NUCLEATIONBASECRITERIA is not given in input file, used default value " << NUCLEATIONBASECRITERIA << endl; }
+	else { cout << "ERROR: Global variable NUCLEATIONBASECRITERIA has multiple definition in input file, used default value NUCLEATIONBASECRITERIA = " << NUCLEATIONBASECRITERIA << endl; }
 
 	//******ADD MORE GLOBAL VARIABLES HERE ALSO ADD THEM TO THE CONSTANTS.H FILE AND GIVE THEM A DEFAULT VALUE IN MAIN*********************//
 

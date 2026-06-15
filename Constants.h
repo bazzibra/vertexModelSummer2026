@@ -51,6 +51,8 @@ extern double TAU_STRESS;							//time it takes to go from min stress to max str
 extern mt19937_64 generator;						//!< Mersenne-Twister random number generator engine, for Mitosis.
 extern uniform_real_distribution<double> distribution;
 extern double PULLINGFORCE; 
-extern bool FREEBOUNDARY; 
+extern bool FREEBOUNDARY;
+extern double NUCLEATIONTHRESHOLD;
+extern bool NUCLEATIONBASECRITERIA;
 
 #endif
