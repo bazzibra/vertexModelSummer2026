@@ -56,7 +56,7 @@ Ratio = 0.300000;
 equilibriumtolerance = 1.000000e-11;
 
 %aSF Nucleation Conditions
-NUCLEATIONTHRESHOLD = 1.45;
+NUCLEATIONTHRESHOLD = 1.25;
 NUCLEATIONBASECRITERIA = true;
 
 % Cell properties

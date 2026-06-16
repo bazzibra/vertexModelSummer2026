@@ -105,7 +105,7 @@ Tissue_Dynamic tissue;
 int main()
 {	
 	//Path to the folder that your initial files are in 
-	string PathName =  "//Users//rafaelvolkamer-pastor//Library//CloudStorage//GoogleDrive-volkamerr@carleton.edu//My Drive//Summer Experiences//Michigan Biophysics REU//vertexModelSummer2026//vertexModelSummer2026//input_files//";
+	string PathName =  "//Users//ibrahim//Documents//Lubensky_Group//gitCode//newDynamicTensions-mainUpdated//input_files//";
 
 	cout << "Enter name of imput file: ";
 	cin >> InputFileName;
