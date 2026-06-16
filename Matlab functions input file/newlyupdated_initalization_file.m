@@ -7,6 +7,12 @@ potential = 'ani';
 
 %% Store data in the right folder
 close all;
+scriptDir = fileparts(mfilename('fullpath'));
+projectRoot = fileparts(scriptDir);
+outputDir = fullfile(projectRoot, 'input_files');
+if ~exist(outputDir, 'dir')
+    mkdir(outputDir);
+end
 
 %% Parameters
 rng(r);
@@ -50,7 +56,7 @@ Ratio = 0.300000;
 equilibriumtolerance = 1.000000e-11;
 
 %aSF Nucleation Conditions
-NUCLEATIONTHRESHOLD = 1.4;
+NUCLEATIONTHRESHOLD = 1.45;
 NUCLEATIONBASECRITERIA = true;
 
 % Cell properties
@@ -67,6 +73,7 @@ VERBOSEON = 1;
 EQUILIBRIUMMITOSIS = 1; 
 
 nomfichier= [prefix '_NbPts_' num2str(NbPoints,'%04d') '_rng_' num2str(r,'%04d') '_pot_' potential '_lim_' num2str(limit, '%2d') '20.txt'];
+nomfichier = fullfile(outputDir, nomfichier);
 
 %% Generate Voronoi
 fprintf('Writing file: %s\n', nomfichier);
@@ -196,7 +203,7 @@ fprintf(fid, 'TISSUE_EXT_STRESS_X\t%f\n', TISSUE_EXT_STRESS_X);
 fprintf(fid, 'TISSUE_EXT_STRESS_Y\t%f\n', TISSUE_EXT_STRESS_Y);
 fprintf(fid, 'equilibriumtolerance\t%e\n', equilibriumtolerance);
 fprintf(fid, 'NUCLEATIONTHRESHOLD\t%f\n', NUCLEATIONTHRESHOLD);
-fprintf(fid, 'NUCLEATIONBASECRITERIA\t%e\n', NUCLEATIONBASECRITERIA);
+fprintf(fid, 'NUCLEATIONBASECRITERIA\t%d\n', NUCLEATIONBASECRITERIA);
 fprintf(fid, 'endGlobal\n');
 
 fprintf(fid, 'Vertices\n');

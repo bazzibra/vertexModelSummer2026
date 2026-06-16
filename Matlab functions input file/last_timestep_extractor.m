@@ -10,6 +10,22 @@ clear; clc;
 inputFile  = 'RFB_NbPts_0050_rng_2031_pot_ani_lim_320_relaxed_out.txt';
 outputFile = 'RFB_NbPts_0050_rng_2031_pot_ani_lim_320_relaxed_out_lasttimestep.txt';
 
+%% Store data in the right folder
+
+
+
+scriptDir = fileparts(mfilename('fullpath'));
+projectRoot = fileparts(scriptDir);
+
+outputDir = fullfile(projectRoot, 'input_files');
+
+if ~exist(outputDir, 'dir')
+    mkdir(outputDir);
+end
+
+% Full path for output file
+outputFile = fullfile(outputDir,outputFile);
+
 %% =========================
 % READ FILE
 %% =========================

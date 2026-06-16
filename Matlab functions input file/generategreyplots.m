@@ -64,10 +64,10 @@ while ~feof(fid)
             continue;
         end
 
-        % Opening angles α
+        % Opening angles alpha
         alpha = [data{4}, data{5}, data{6}];
         
-        % Bisector orientations θ
+        % Bisector orientations theta
         theta = [data{7}, data{8}, data{9}];
         
         % Nucleation flags
@@ -79,7 +79,7 @@ while ~feof(fid)
         
         % Store only nucleation events
         for k = 1:3
-            if nuc(k) ~= 0      % or == 1, depending on your file format
+            if nuc(k) == 1      % or == 1, depending on your file format
                 alpha_nuc(end+1,1) = alpha(k);
                 theta_nuc(end+1,1) = theta(k);
             end
@@ -107,11 +107,13 @@ H_C = H_C / sum(H_C(:));
 figure;
 imagesc(theta_centers, alpha_centers, H_C');
 axis xy;
+pi_axis_ticks();
 colormap(gray);
 colorbar;
-xlabel('Bisector Orientation \theta (rad)');
+xlabel('Bisector Orientation \theta (relative to pulling)(rad)');
 ylabel('Opening Angle \alpha (rad)');
 title('C: Fraction of TCJs');
+
 
 %% =========================
 % PANEL D: Fraction of nucleation events
@@ -124,9 +126,10 @@ H_D = H_D / sum(H_D(:));
 figure;
 imagesc(theta_centers, alpha_centers, H_D');
 axis xy;
+pi_axis_ticks();
 colormap(gray);
 colorbar;
-xlabel('Bisector Orientation \theta (rad)');
+xlabel('Bisector Orientation \theta (relative to pulling)(rad)');
 ylabel('Opening Angle \alpha (rad)');
 title('D: Fraction of aSF Nucleation Events');
 
@@ -142,9 +145,10 @@ H_E(rare_mask) = NaN;
 figure;
 imagesc(theta_centers, alpha_centers, H_E');
 axis xy;
+pi_axis_ticks();
 colormap(gray);
 colorbar;
-xlabel('Bisector Orientation \theta (rad)');
+xlabel('Bisector Orientation \theta (relative to pulling)(rad)');
 ylabel('Opening Angle \alpha (rad)');
 title('E: Relative aSF Nucleation Rate');
 
@@ -158,4 +162,17 @@ hold off;
 %% =========================
 disp('Grey plots generated successfully.');
 
+
+
+function pi_axis_ticks()
+
+    xticks([0 pi/8 pi/4 3*pi/8 pi/2]);
+    xticklabels({'0','$\pi/8$','$\pi/4$','$3\pi/8$','$\pi/2$'});
+
+    yticks([0 pi/4 pi/2 3*pi/4 pi]);
+    yticklabels({'0','$\pi/4$','$\pi/2$','$3\pi/4$','$\pi$'});
+
+    set(gca,'TickLabelInterpreter','latex')
+
+end
 
