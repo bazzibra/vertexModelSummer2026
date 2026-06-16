@@ -2,6 +2,7 @@
 *.asv
 *.tif
 *.txt
+*.txt_movie
 my_program_AG
 my_program_Dyn
 base.exe

@@ -463,7 +463,7 @@ void Tissue_Dynamic::HelperWriteOutputData_Write2File(ofstream* datafile, bool i
 	*datafile << "KAPPA\t" << KAPPA << endl;
 	*datafile << "GAMMA0\t" << GAMMA0 << endl;
 	*datafile << "Y\t" << Y << endl;
-	*datafile << "NUMBER OF CELLS\t" << cells.size() << endl;
+	*datafile << "NUMBER_OF_CELLS\t" << cells.size() << endl;
 	*datafile << "NUCLEATIONTHRESHOLD\t" << NUCLEATIONTHRESHOLD << endl;
 	*datafile << "NUCLEATIONBASECRITERIA\t" << NUCLEATIONBASECRITERIA << endl;
 

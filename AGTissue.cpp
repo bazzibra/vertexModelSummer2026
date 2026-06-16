@@ -446,6 +446,8 @@ void AGTissue::HelperWriteOutputData_Write2File(ofstream* datafile, bool include
 	*datafile << "PuLLINGDIR_X\t" << PULLINGDIR_X << endl;
 	*datafile << "PuLLINGDIR_Y\t" << PULLINGDIR_Y << endl;
 	*datafile << "C4\t" << C4 << endl;
+	*datafile << "NUMBER_OF_CELLS\t" << cells.size() << endl;
+	//******ADD NEW OUTPUT HERE******//
 	*datafile << "NUCLEATIONTHRESHOLD\t" << NUCLEATIONTHRESHOLD << endl;
 	*datafile << "NUCLEATIONBASECRITERIA\t" << NUCLEATIONBASECRITERIA << endl;
 	*datafile << "NUMBER OF CELLS\t" << cells.size() << endl;

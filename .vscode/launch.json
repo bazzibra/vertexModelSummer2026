@@ -9,7 +9,7 @@
             "name": "Launch",
             "type": "lldb",
             "request": "launch",
-            "program": "${workspaceFolder}/base.exe",
+            "program": "${workspaceFolder}/dynamic.exe",
             "args": [],
             "cwd": "${workspaceFolder}",
         }
