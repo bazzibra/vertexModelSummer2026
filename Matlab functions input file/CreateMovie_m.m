@@ -6,8 +6,8 @@ function CreateMovie_m(inputFileName,tension_bounds)
 
 if nargin == 0
     disp('No arguments given using default')
-    inputFileName = 'RFB_NbPts_0200_rng_2031_pot_ani_lim_320_relaxed_out.txt'
-    tension_bounds = 0
+    inputFileName = '/Users/ibrahim/Documents/Lubensky_Group/gitCode/newDynamicTensions-mainUpdated/input_files/RFB_NbPts_0200_rng_2031_pot_ani_lim_320_relaxed_out.txt';
+    tension_bounds = 0;
 end
 
 %% ==========================================================
@@ -71,9 +71,8 @@ currentPos = ftell(fid);
 %% ==========================================================
 % MAIN MOVIE LOOP
 %% ==========================================================
-movieObj = VideoWriter('placeholderMovie.mp4','MPEG-4'); 
-movieObj.Duration = 30;
 
+movieObj = VideoWriter('placeholderMovie.mp4','MPEG-4'); 
 movieObj.open; 
 
 
@@ -98,9 +97,10 @@ while true
 
     framename = strcat(outputFileName, ...
         '/frame_',num2str(count,'%03d'),'.tif');
-
-    imagewd = getframe(gcf);
-   % imwrite(imagewd.cdata,framename,'tif','Resolution',100);
+    fig = gcf; 
+    fig.Position(3) = 840; 
+    imagewd = getframe(fig);
+    imwrite(imagewd.cdata,framename,'tif','Resolution',100);
     movieObj.writeVideo(imagewd); 
 
     count = count + 1;
@@ -179,7 +179,12 @@ for i = 1:N
     vertexY = V.y(i);
 
     if(V.Nucleation1(i) || V.Nucleation2(i) || V.Nucleation3(i))
-        viscircles([vertexX vertexY], 1);
+        %% viscircles([vertexX vertexY], 1);
+        phillip = linspace(0,2*pi,100);
+        r = 1; 
+        x = r * cos(phillip) + vertexX; 
+        y = r * sin(phillip) + vertexY;
+        plot(x,y,Color=[1 1 1],LineWidth=2.5); 
     end
 
 end
