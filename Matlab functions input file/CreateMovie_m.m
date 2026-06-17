@@ -25,7 +25,7 @@ figure();
 %% ==========================================================
 % USER PARAMETER
 %% ==========================================================
-TENSION_THRESHOLD = 1.5;   % <<< CHANGE THIS VALUE
+TENSION_THRESHOLD = 2.0;   % <<< CHANGE THIS VALUE
 
 %% ==========================================================
 % GET MAX BOX SIZE
@@ -72,8 +72,12 @@ currentPos = ftell(fid);
 % MAIN MOVIE LOOP
 %% ==========================================================
 
-movieObj = VideoWriter('placeholderMovie.mp4','MPEG-4'); 
-movieObj.open; 
+outputFileName = strcat(inputFileName,'_movie');
+mkdir(outputFileName)
+
+movieFile = fullfile(outputFileName,'movie.mp4');
+movieObj = VideoWriter(movieFile,'MPEG-4');
+open(movieObj);
 
 
 while true
@@ -177,7 +181,9 @@ N = length(V.Nucleation1);
 for i = 1:N
     vertexX = V.x(i);
     vertexY = V.y(i);
-
+    if(isnan(V.Nucleation1(i)) || isnan(V.Nucleation2(i)) || isnan(V.Nucleation3(i)))
+        break
+    end
     if(V.Nucleation1(i) || V.Nucleation2(i) || V.Nucleation3(i))
         %% viscircles([vertexX vertexY], 1);
         phillip = linspace(0,2*pi,100);
