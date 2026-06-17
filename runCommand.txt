@@ -1,16 +1,20 @@
 Original Program:
-
 Compile:
 clang++ -std=c++11 -c AGCell.cpp -o AGCell.o && clang++ -std=c++11 -c AGTissue.cpp -o AGTissue.o && clang++ -std=c++11 -c CellClass.cpp -o CellClass.o && clang++ -std=c++11 -c EdgeClass.cpp -o EdgeClass.o && clang++ -std=c++11 -c MainTest.cpp -o MainTest.o && clang++ -std=c++11 -c SharedConstants.cpp -o SharedConstants.o && clang++ -std=c++11 -c TissueClass.cpp -o TissueClass.o && clang++ -std=c++11 -c VectClass.cpp -o VectClass.o && clang++ -std=c++11 -c VertexClass.cpp -o VertexClass.o && clang++ -std=c++11 MainTest.o SharedConstants.o AGCell.o AGTissue.o CellClass.o EdgeClass.o TissueClass.o VectClass.o VertexClass.o -o my_program_AG
 
 Run: ./my_program_AG
 
 Dynamic Program:
-
 Compile:
 clang++ -std=c++11 -c AGCell.cpp -o AGCell.o && clang++ -std=c++11 -c AGTissue.cpp -o AGTissue.o && clang++ -std=c++11 -c CellClass.cpp -o CellClass.o && clang++ -std=c++11 -c DynamicEdge.cpp -o DynamicEdge.o && clang++ -std=c++11 -c DynamicMain.cpp -o DynamicMain.o && clang++ -std=c++11 -c SharedConstants.cpp -o SharedConstants.o && clang++ -std=c++11 -c DynamicTissue.cpp -o DynamicTissue.o && clang++ -std=c++11 -c EdgeClass.cpp -o EdgeClass.o && clang++ -std=c++11 -c TissueClass.cpp -o TissueClass.o && clang++ -std=c++11 -c VectClass.cpp -o VectClass.o && clang++ -std=c++11 -c VertexClass.cpp -o VertexClass.o && clang++ -std=c++11 DynamicMain.o SharedConstants.o AGCell.o AGTissue.o CellClass.o DynamicEdge.o DynamicTissue.o EdgeClass.o TissueClass.o VectClass.o VertexClass.o -o my_program_Dyn
 
 Run: ./my_program_Dyn
 
-
+Pathname:
 "//Users//rafaelvolkamer-pastor//Library/CloudStorage//GoogleDrive-volkamerr@carleton.edu//My Drive//Summer Experiences//Michigan Biophysics REU//vertexModelSummer2026//vertexModelSummer2026//input_files//"
+
+Original Debugger:
+clang++ -g AGCell.cpp AgTissue.cpp CellClass.cpp    EdgeClass.cpp SharedConstants.cpp TissueClass.cpp VectClass.cpp VertexClass.cpp MainTest.cpp -o base.exe
+
+Dynamic Debugger:
+clang++ -g AGCell.cpp AgTissue.cpp CellClass.cpp DynamicEdge.cpp DynamicMain.cpp DynamicTissue.cpp EdgeClass.cpp SharedConstants.cpp TissueClass.cpp VectClass.cpp VertexClass.cpp -o dynamic.exe

@@ -1756,6 +1756,7 @@ void AGTissue::WriteOutputDataAppend(ofstream* datafile) {
 bool AGTissue::IsEquilibrated()
 {
 	bool energyratio = (abs((currentFreeEnergy - pastFreeEnergy)) < equilibriumtolerance);
+	//cout << "Energy ratio: " << abs((currentFreeEnergy - pastFreeEnergy)) << endl;
 	return energyratio;
 }
 /*

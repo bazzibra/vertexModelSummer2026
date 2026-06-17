@@ -8,7 +8,7 @@ clear; clc; close all;
 %% =========================
 % USER INPUT
 %% =========================
-filename = 'RFB_NbPts_0050_rng_2031_pot_ani_lim_320_relaxed_out_lasttimestep.txt';   % <-- your snapshot file
+filename = 'RFB_NbPts_0200_rng_2031_pot_ani_lim_320_relaxed_out_lasttimestep.txt';   % <-- your snapshot file
 
 nbins_alpha = 20;
 nbins_theta = 20;
@@ -102,17 +102,17 @@ theta_centers = 0.5 * (theta_edges(1:end-1) + theta_edges(2:end));
 % PANEL C: Fraction of TCJs
 %% =========================
 H_C = histcounts2(theta_all, alpha_all, theta_edges, alpha_edges);
-H_C = H_C / sum(H_C(:));
+H_Cnorm = H_C / sum(H_C(:));
 
 figure;
-imagesc(theta_centers, alpha_centers, H_C');
+imagesc(theta_centers, alpha_centers, H_Cnorm');
 axis xy;
 pi_axis_ticks();
 colormap(gray);
 colorbar;
 xlabel('Bisector Orientation \theta (relative to pulling)(rad)');
 ylabel('Opening Angle \alpha (rad)');
-title('C: Fraction of TCJs');
+title(sprintf('C: Fraction of TCJs, n = %d', sum(H_C(:))));
 
 
 %% =========================
@@ -121,17 +121,17 @@ title('C: Fraction of TCJs');
 %% =========================
 H_D = histcounts2(theta_nuc, alpha_nuc,theta_edges, alpha_edges);
 
-H_D = H_D / sum(H_D(:));
+H_Dnorm = H_D / sum(H_D(:));
 
 figure;
-imagesc(theta_centers, alpha_centers, H_D');
+imagesc(theta_centers, alpha_centers, H_Dnorm');
 axis xy;
 pi_axis_ticks();
 colormap(gray);
 colorbar;
 xlabel('Bisector Orientation \theta (relative to pulling)(rad)');
 ylabel('Opening Angle \alpha (rad)');
-title('D: Fraction of aSF Nucleation Events');
+title(sprintf('D: Fraction of aSF Nucleation Events, n = %d', sum(H_D(:))));
 
 %% =========================
 % PANEL E: Relative nucleation rate
@@ -150,7 +150,7 @@ colormap(gray);
 colorbar;
 xlabel('Bisector Orientation \theta (relative to pulling)(rad)');
 ylabel('Opening Angle \alpha (rad)');
-title('E: Relative aSF Nucleation Rate');
+title('E: Relative Nucleation Probability');
 
 hold on;
 contour(theta_centers, alpha_centers, rare_mask', ...

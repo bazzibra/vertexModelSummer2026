@@ -7,8 +7,8 @@ clear; clc;
 %% =========================
 % USER INPUT
 %% =========================
-inputFile  = 'RFB_NbPts_0050_rng_2031_pot_ani_lim_320_relaxed_out.txt';
-outputFile = 'RFB_NbPts_0050_rng_2031_pot_ani_lim_320_relaxed_out_lasttimestep.txt';
+inputFile  = 'RFB_NbPts_0200_rng_2031_pot_ani_lim_320_relaxed_out.txt';
+outputFile = 'RFB_NbPts_0200_rng_2031_pot_ani_lim_320_relaxed_out_lasttimestep.txt';
 
 %% Store data in the right folder
 
