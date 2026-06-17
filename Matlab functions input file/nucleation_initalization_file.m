@@ -1,5 +1,5 @@
 r = 2031; % Updated seed to match target
-NbPoints = 10; 
+NbPoints = 400; 
 limit = 3; 
 cpt = 'quadratic';
 prefix = 'RFB';
@@ -16,14 +16,14 @@ end
 
 %% Parameters
 rng(r);
-TOTALTIME = 10.000000;
+TOTALTIME = 100.000000;
 SEED = 89542;
-TIMEINTERVAL = 0.100000;
+TIMEINTERVAL = 1.00000;
 error_tolerance_absolute_mechanical = 0.010000;
 TISSUE_EXT_STRESS_X = 0.000000;     %should both be 0 to relax tissue, change before dynamic
 TISSUE_EXT_STRESS_Y = 0.000000; 
-equilibriumtolerance = 1.000000e-9;
-NUCLEATIONTHRESHOLD = 1.75;
+equilibriumtolerance = 1.000000e-2;
+NUCLEATIONTHRESHOLD = 2.00;
 NUCLEATIONBASECRITERIA = true;
 Ratio = 10/3;
 
