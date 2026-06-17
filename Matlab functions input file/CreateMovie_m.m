@@ -14,12 +14,12 @@ mkdir(outputFileName)
 fid = fopen(inputFileName);
 count = 0;
 
-figure()
+figure();
 
 %% ==========================================================
 % USER PARAMETER
 %% ==========================================================
-TENSION_THRESHOLD = 1.5   % <<< CHANGE THIS VALUE
+TENSION_THRESHOLD = 1.5;   % <<< CHANGE THIS VALUE
 
 %% ==========================================================
 % GET MAX BOX SIZE
@@ -65,6 +65,12 @@ currentPos = ftell(fid);
 %% ==========================================================
 % MAIN MOVIE LOOP
 %% ==========================================================
+movieObj = VideoWriter('placeholderMovie.mp4','MPEG-4'); 
+movieObj.Duration = 30;
+
+movieObj.open; 
+
+
 while true
 
     [V,E,BoxSize,currentPos] = ReadSimulationOutput(fid,currentPos);
@@ -88,10 +94,13 @@ while true
         '/frame_',num2str(count,'%03d'),'.tif');
 
     imagewd = getframe(gcf);
-    imwrite(imagewd.cdata,framename,'tif','Resolution',100);
+   % imwrite(imagewd.cdata,framename,'tif','Resolution',100);
+    movieObj.writeVideo(imagewd); 
 
     count = count + 1;
 end
+
+movieObj.close;
 
 %% ==========================================================
 % BOX SIZE DIAGNOSTICS
