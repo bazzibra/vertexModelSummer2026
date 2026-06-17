@@ -110,7 +110,7 @@ axis xy;
 pi_axis_ticks();
 colormap(gray);
 colorbar;
-xlabel('Bisector Orientation \theta (relative to pulling)(rad)');
+xlabel('Bisector Orientation \theta (rad)');
 ylabel('Opening Angle \alpha (rad)');
 title(sprintf('C: Fraction of TCJs, n = %d', sum(H_C(:))));
 
@@ -129,7 +129,7 @@ axis xy;
 pi_axis_ticks();
 colormap(gray);
 colorbar;
-xlabel('Bisector Orientation \theta (relative to pulling)(rad)');
+xlabel('Bisector Orientation \theta (rad)');
 ylabel('Opening Angle \alpha (rad)');
 title(sprintf('D: Fraction of aSF Nucleation Events, n = %d', sum(H_D(:))));
 
@@ -148,7 +148,7 @@ axis xy;
 pi_axis_ticks();
 colormap(gray);
 colorbar;
-xlabel('Bisector Orientation \theta (relative to pulling)(rad)');
+xlabel('Bisector Orientation \theta (rad)');
 ylabel('Opening Angle \alpha (rad)');
 title('E: Relative Nucleation Probability');
 
