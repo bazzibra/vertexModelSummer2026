@@ -60,6 +60,7 @@ void AGTissue::HelperReadInputData_SetGlobalValues(ifstream* datafile) {
 	//Now assign the constants their values
 	//makes sure the key is actually part of the map before giving the constant a value if the key is not defined it will have the value given at the begining of main
 	// the atof is there to convert the string to a double
+	
 	if (globals.count("LX") == 1) { LX = atof(globals["LX"].c_str()); }
 	else if (globals.count("LX") == 0) { cout << "WARNING: LX is not given in input file, used default value " << LX << endl; }
 	else { cout << "ERROR: Global variable LX has multiple definition in input file, used default value LX = " << LX << endl; }
@@ -169,7 +170,13 @@ void AGTissue::HelperReadInputData_SetGlobalValues(ifstream* datafile) {
 	else if (globals.count("NUCLEATIONBASECRITERIA") == 0) { cout << "WARNING: NUCLEATIONBASECRITERIA is not given in input file, used default value " << NUCLEATIONBASECRITERIA << endl; }
 	else { cout << "ERROR: Global variable NUCLEATIONBASECRITERIA has multiple definition in input file, used default value NUCLEATIONBASECRITERIA = " << NUCLEATIONBASECRITERIA << endl; }
 
+	if (globals.count("A0") == 1) { A0 = atof(globals["A0"].c_str()); }
+	else if (globals.count("A0") == 0) { cout << "WARNING: A0 is not given in input file, used default value " << A0 << endl; }
+	else { cout << "ERROR: Global variable A0 has multiple definition in input file, used default value A0 = " << A0 << endl; }
 
+	if (globals.count("equilibriumtolerance") == 1) { equilibriumtolerance = atof(globals["equilibriumtolerance"].c_str()); }
+	else if (globals.count("equilibriumtolerance") == 0) { cout << "WARNING: equilibriumtolerance is not given in input file, used default value " << equilibriumtolerance << endl; }
+	else { cout << "ERROR: Global variable equilibriumtolerance has multiple definition in input file, used default value equilibriumtolerance = " << equilibriumtolerance << endl; }
 
 	// setting set the initial box dimensions here
 	LX0 = LX;
@@ -428,28 +435,31 @@ void AGTissue::HelperWriteOutputData_Write2File(ofstream* datafile, bool include
 	//Now write the global variables you used
 	*datafile << "CURRENTTIME\t" << CURRENTTIME << endl;
 	*datafile << "Global:" << endl;
-	*datafile << "SEED\t" << SEED << endl;
-	*datafile << "TIMEINTERVAL\t" << TIMEINTERVAL << endl;
 	*datafile << "LX\t" << LX << endl;
 	*datafile << "LY\t" << LY << endl;
+	*datafile << "A0\t" << A0 << endl;
+	*datafile << "SEED\t" << SEED << endl;
+	*datafile << "TIMEINTERVAL\t" << TIMEINTERVAL << endl;
 	*datafile << "MINAREA\t" << MINAREA << endl;
 	*datafile << "MINLENGTH\t" << MINLENGTH << endl;
 	*datafile << "NEWEDGELENGTH\t" << NEWEDGELENGTH << endl;
 	*datafile << "K\t" << K << endl;
 	*datafile << "GAMMA\t" << GAMMA << endl;
 	*datafile << "TOTALTIME\t" << TOTALTIME << endl;
+	*datafile << "VERBOSEON\t" << VERBOSEON << endl;
 	*datafile << "INITIALSTEPSIZE\t" << INITIALSTEPSIZE << endl;
 	*datafile << "error_tolerance_absolute_mechanical\t" << error_tolerance_absolute_mechanical << endl;
 	*datafile << "TISSUE_ALPHA\t" << TISSUE_ALPHA << endl;
+	*datafile << "ALPHAM\t" << alphaM << endl;
 	*datafile << "TISSUE_EXT_STRESS_X\t" << TISSUE_EXT_STRESS_X << endl;
 	*datafile << "TISSUE_EXT_STRESS_Y\t" << TISSUE_EXT_STRESS_Y << endl;
+	*datafile << "equilibriumtolerance\t" << equilibriumtolerance << endl;
+	*datafile << "NUCLEATIONTHRESHOLD\t" << NUCLEATIONTHRESHOLD << endl;
+	*datafile << "NUCLEATIONBASECRITERIA\t" << NUCLEATIONBASECRITERIA << endl;
 	*datafile << "PuLLINGDIR_X\t" << PULLINGDIR_X << endl;
 	*datafile << "PuLLINGDIR_Y\t" << PULLINGDIR_Y << endl;
 	*datafile << "C4\t" << C4 << endl;
 	*datafile << "NUMBER_OF_CELLS\t" << cells.size() << endl;
-	//******ADD NEW OUTPUT HERE******//
-	*datafile << "NUCLEATIONTHRESHOLD\t" << NUCLEATIONTHRESHOLD << endl;
-	*datafile << "NUCLEATIONBASECRITERIA\t" << NUCLEATIONBASECRITERIA << endl;
 	//******ADD NEW OUTPUT HERE******//
 	*datafile << "endGlobal" << endl;
 
