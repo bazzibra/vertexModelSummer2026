@@ -4,6 +4,12 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 function CreateMovie_m(inputFileName,tension_bounds)
 
+if nargin == 0
+    disp('No arguments given using default')
+    inputFileName = 'RFB_NbPts_0200_rng_2031_pot_ani_lim_320_relaxed_out.txt'
+    tension_bounds = 0
+end
+
 %% ==========================================================
 % INITIALIZE
 %% ==========================================================
@@ -19,7 +25,7 @@ figure()
 %% ==========================================================
 % USER PARAMETER
 %% ==========================================================
-TENSION_THRESHOLD = 1.5   % <<< CHANGE THIS VALUE
+TENSION_THRESHOLD = 2   % <<< CHANGE THIS VALUE
 
 %% ==========================================================
 % GET MAX BOX SIZE
