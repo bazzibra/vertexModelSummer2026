@@ -41,7 +41,7 @@ MinTension = inf;
 MaxTension = -inf;
 
 while true
-    [V,E,BoxSize,currentPos] = ReadSimulationOutput(fid,currentPos);
+    [V,E,BoxSize,currentPos,TENSION_THRESHOLD] = ReadSimulationOutput(fid,currentPos);
 
     if currentPos == -2
         break
@@ -82,7 +82,7 @@ open(movieObj);
 
 while true
 
-    [V,E,BoxSize,currentPos] = ReadSimulationOutput(fid,currentPos);
+    [V,E,BoxSize,currentPos,TENSION_THRESHOLD] = ReadSimulationOutput(fid,currentPos);
 
     if currentPos == -2
         break
@@ -226,9 +226,10 @@ set(ha,'YTick',[]);
 hHigh = plot(nan,nan,'-','Color',HIGH_COLOR,'LineWidth',2.5);
 hLow  = plot(nan,nan,'-','Color',LOW_COLOR,'LineWidth',1);
 
+title('SimulationVideo'); 
 legend([hHigh hLow], ...
     {'T > Threshold','T < Threshold'}, ...
-    'TextColor','w', ...
+    'TextColor','b', ...
     'Location','southoutside');
 
 hold off;

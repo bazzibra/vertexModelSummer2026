@@ -76,7 +76,7 @@ plot(nan,nan,'-','Color',HIGH_COLOR,'LineWidth',2.5,...
     'DisplayName','T > Threshold');
 plot(nan,nan,'-','Color',LOW_COLOR,'LineWidth',1,...
     'DisplayName','T < Threshold');
-legend('TextColor','w','Location','southoutside')
+legend(TextColor','w','Location','southoutside')
 
 hold off
 end
