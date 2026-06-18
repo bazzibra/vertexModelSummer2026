@@ -8,7 +8,7 @@ clear; clc; close all;
 %% =========================
 % USER INPUT
 %% =========================
-filename = 'RFB_NbPts_0200_rng_2031_pot_ani_lim_320_relaxed_out_lasttimestep.txt';   % <-- your snapshot file
+filename = 'RFB_NbPts_0400_rng_2031_pot_ani_lim_320_relaxed_out_lasttimestep.txt';   % <-- your snapshot file
 
 nbins_alpha = 20;
 nbins_theta = 20;
