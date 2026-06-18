@@ -60,8 +60,8 @@ while ~strcmpi(line, 'endGlobal')
         Ly = textscan(line, '%*s %f');
     elseif strncmpi(line, 'CURRENTTIME', 2)
         t=textscan(line, '%*s %f');
-    elseif strncmpi(line,'NUCLEATIONTHRESHOLD',2)
-        Threshold = textscan(line,'%*s %f'); 
+    elseif strncmpi(line,'NUCLEATIONTHRESHOLD',12)
+        ThresholdTemp = textscan(line,'%*s %d'); 
     end
     
     %return if end-of-file reached
@@ -78,9 +78,9 @@ while ~strcmpi(line, 'endGlobal')
 end
 
 %Output Lx and Ly as BoxSize
-BoxSize = [Lx{1},Ly{1}]
+BoxSize = [Lx{1},Ly{1}];
 time=t{1};
-Threshold = Threshold{1};
+Threshold = ThresholdTemp{1}; 
 
 %Advance until keyword 'Vertices'
 line = fgetl(fid);
