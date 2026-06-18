@@ -60,9 +60,10 @@ while ~strcmpi(line, 'endGlobal')
         Ly = textscan(line, '%*s %f');
     elseif strncmpi(line, 'CURRENTTIME', 2)
         t=textscan(line, '%*s %f');
-    elseif strncmpi(line,'NUCLEATIONTHRESHOLD',2)
+    elseif strncmpi(line,'NUCLEATIONTHRESHOLD',12)
         Threshold = textscan(line,'%*s %f'); 
     end
+
     
     %return if end-of-file reached
     line = fgetl(fid);
