@@ -6,7 +6,7 @@ function CreateMovie_m(inputFileName,tension_bounds)
 
 if nargin == 0
     disp('No arguments given using default')
-    inputFileName = '/Users/ibrahim/Documents/Lubensky_Group/gitCode/newDynamicTensions-mainUpdated/input_files/RFB_NbPts_0200_rng_2031_pot_ani_lim_320_relaxed_out.txt';
+    inputFileName = '/Users/rafaelvolkamer-pastor/Library/CloudStorage/GoogleDrive-volkamerr@carleton.edu/My Drive/Summer Experiences/Michigan Biophysics REU/vertexModelSummer2026/vertexModelSummer2026/input_files/RFB_NbPts_0400_rng_2031_pot_ani_lim_320_relaxed_out.txt';
     tension_bounds = 0;
 end
 
