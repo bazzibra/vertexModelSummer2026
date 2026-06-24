@@ -111,8 +111,7 @@ while true
 
     %framename = strcat(outputFileName,'/frame_',num2str(count,'%03d'),'.tif');
     fig = gcf; 
-    fig.Position(3) = 1920;
-    fig.Position(4) = 1080;
+    fig.Position(3) = 1920; %on windows I found that using fig.Position(3) = 1920; and fig.Position(4) = 1080; while on mac just fig.Position(3) = 1920;
     imagewd = getframe(fig);
     %imwrite(imagewd.cdata,framename,'tif','Resolution',100);
     movieObj.writeVideo(imagewd); 
