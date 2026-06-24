@@ -37,7 +37,7 @@ double Edge_Dynamic::GetTension_Magnitude() { //tension eqn from Banerjee 2019
 
 
 double Edge_Dynamic::GetRestLength() { //return edge's rest length
-	return L0;
+	return currentRestLength;
 }
 
 

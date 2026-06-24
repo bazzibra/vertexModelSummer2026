@@ -125,13 +125,15 @@ void Tissue_Dynamic::HelperReadInputData_SetGlobalValues(ifstream* datafile) {
 	else if (globals.count("TISSUE_EXT_STRESS") == 0) { cout << "WARNING: TISSUE_EXT_STRESS is not given in input file, used default value " << TISSUE_EXT_STRESS << endl; }
 	else { cout << "ERROR: Global variable TISSUE_EXT_STRESS has multiple definition in input file, used default value TISSUE_EXT_STRESS = " << TISSUE_EXT_STRESS << endl; }
 
-	if (globals.count("TISSUE_EXT_STRESS_X") == 1) { TISSUE_EXT_STRESS_X = atof(globals["TISSUE_EXT_STRESS_X"].c_str()); }
-	else if (globals.count("TISSUE_EXT_STRESS_X") == 0) { cout << "WARNING: TISSUE_EXT_STRESS_X is not given in input file, used default value " << TISSUE_EXT_STRESS_X << endl; }
-	else { cout << "ERROR: Global variable TISSUE_EXT_STRESS_X has multiple definition in input file, used default value TISSUE_EXT_STRESS_X = " << TISSUE_EXT_STRESS_X << endl; }
+	//if (globals.count("TISSUE_EXT_STRESS_X") == 1) { TISSUE_EXT_STRESS_X = atof(globals["TISSUE_EXT_STRESS_X"].c_str()); }
+	//else if (globals.count("TISSUE_EXT_STRESS_X") == 0) { cout << "WARNING: TISSUE_EXT_STRESS_X is not given in input file, used default value " << TISSUE_EXT_STRESS_X << endl; }
+	//else { cout << "ERROR: Global variable TISSUE_EXT_STRESS_X has multiple definition in input file, used default value TISSUE_EXT_STRESS_X = " << TISSUE_EXT_STRESS_X << endl; }
 
-	if (globals.count("TISSUE_EXT_STRESS_Y") == 1) { TISSUE_EXT_STRESS_Y = atof(globals["TISSUE_EXT_STRESS_Y"].c_str()); }
-	else if (globals.count("TISSUE_EXT_STRESS_Y") == 0) { cout << "WARNING: TISSUE_EXT_STRESS_Y is not given in input file, used default value " << TISSUE_EXT_STRESS_Y << endl; }
-	else { cout << "ERROR: Global variable TISSUE_EXT_STRESS_Y has multiple definition in input file, used default value TISSUE_EXT_STRESS_Y = " << TISSUE_EXT_STRESS_Y << endl; }
+	//if (globals.count("TISSUE_EXT_STRESS_Y") == 1) { TISSUE_EXT_STRESS_Y = atof(globals["TISSUE_EXT_STRESS_Y"].c_str()); }
+	//else if (globals.count("TISSUE_EXT_STRESS_Y") == 0) { cout << "WARNING: TISSUE_EXT_STRESS_Y is not given in input file, used default value " << TISSUE_EXT_STRESS_Y << endl; }
+	//else { cout << "ERROR: Global variable TISSUE_EXT_STRESS_Y has multiple definition in input file, used default value TISSUE_EXT_STRESS_Y = " << TISSUE_EXT_STRESS_Y << endl; }
+
+	cout << "WARNING: TISSUE_EXT_STRESS_X and TISSUE_EXT_STRESS_Y are overwritten, used default value TISSUE_EXT_STRESS_X = 0 and TISSUE_EXT_STRESS_Y = -ExternalStressRatio*EpsilonMax*Y*sqrt(Ncells)/LX" << endl;
 
 	if (globals.count("MITOSISON") == 1) { MITOSISON = (atof(globals["MITOSISON"].c_str()) > 0); }
 	else if (globals.count("MITOSISON") == 0) { cout << "WARNING: MITOSISON is not given in input file, used default value " << MITOSISON << endl; }
@@ -189,6 +191,9 @@ void Tissue_Dynamic::HelperReadInputData_SetGlobalValues(ifstream* datafile) {
 	else if (globals.count("equilibriumtolerance") == 0) { cout << "WARNING: equilibriumtolerance is not given in input file, used default value " << equilibriumtolerance << endl; }
 	else { cout << "ERROR: Global variable equilibriumtolerance has multiple definition in input file, used default value equilibriumtolerance = " << equilibriumtolerance << endl; }
 
+	if (globals.count("ExternalStressRatio") == 1) { ExternalStressRatio = atof(globals["ExternalStressRatio"].c_str()); }
+	else if (globals.count("ExternalStressRatio") == 0) { cout << "WARNING: ExternalStressRatio is not given in input file, used default value " << ExternalStressRatio << endl; }
+	else { cout << "ERROR: Global variable ExternalStressRatio has multiple definition in input file, used default value ExternalStressRatio = " << ExternalStressRatio << endl; }
 
 	//******ADD MORE GLOBAL VARIABLES HERE ALSO ADD THEM TO THE CONSTANTS.H FILE AND GIVE THEM A DEFAULT VALUE IN MAIN*********************//
 
@@ -296,7 +301,7 @@ void Tissue_Dynamic::HelperReadInputData_CreateObjects(ifstream* datafile) {
 		v2 = atoi(objectInfo["vertex2"].c_str());
 		xf = atoi(objectInfo["xflag"].c_str());
 		yf = atoi(objectInfo["yflag"].c_str());
-		L0 = atoi(objectInfo["length"].c_str());
+		L0 = atof(objectInfo["length"].c_str());
 		Edge_Dynamic* eptr = new Edge_Dynamic;
 		(*eptr).id = newid;
 		(*eptr).IOVertexID[0] = v1;
@@ -306,6 +311,9 @@ void Tissue_Dynamic::HelperReadInputData_CreateObjects(ifstream* datafile) {
 		(*eptr).cell1 = NULL;
 		(*eptr).cell2 = NULL;
 		(*eptr).L0 = L0 / ((GAMMA0/Y)+1);
+		(*eptr).currentRestLength = (*eptr).L0;
+		(*eptr).restLengthOld = (*eptr).L0;
+		(*eptr).restLengthNew = (*eptr).L0;
 		//cout << "L0 VAL " << (*eptr).L0 << endl;
 		//(*eptr).L0 = L0; //option if you're feeding in rest lengths instead of current edge lengths
 		(edges).push_back(eptr);		// Create a vertes with an id and x,y pos and put it in the master list of all veritces
@@ -478,7 +486,7 @@ void Tissue_Dynamic::HelperWriteOutputData_Write2File(ofstream* datafile, bool i
 	*datafile << "KAPPA\t" << KAPPA << endl;
 	*datafile << "GAMMA0\t" << GAMMA0 << endl;
 	*datafile << "Y\t" << Y << endl;
-
+	*datafile << "ExternalStressRatio\t" << ExternalStressRatio << endl;
 
 	//******ADD NEW OUTPUT HERE******//
 	*datafile << "endGlobal" << endl;
@@ -1306,6 +1314,8 @@ bool Tissue_Dynamic::HelperEvolve_UpdatePosition() {
 	for (list<Edge*>::iterator dit = edges.begin(); dit != edges.end(); dit++) {
 		if (Edge_Dynamic* ed = dynamic_cast<Edge_Dynamic*>(*dit)) {
 			(*ed).L0 = (*ed).restLengthNew;
+			(*ed).currentRestLength = (*ed).restLengthNew;
+			(*ed).restLengthOld = (*ed).restLengthNew;
 		}
 	}
 	for (list<Vertex*>::iterator vit = vertices.begin(); vit != vertices.end(); vit++) {
@@ -1656,6 +1666,10 @@ Edge* Tissue_Dynamic::CreateEdge(Edge* subclass, bool xflg, bool yflg, Vertex* v
 	(*eptr).cell1 = c1;
 	(*eptr).cell2 = c2;
 	(*eptr).L0 = *ptr_savedRestLength_T1;
+	(*eptr).currentRestLength = (*eptr).L0;
+	(*eptr).restLengthOld = (*eptr).L0;
+	(*eptr).restLengthNew = (*eptr).L0;
+	(edges).push_back(eptr);
 	(edges).push_back(eptr);
 	edgeIDs.push_back(newid);
 
@@ -1781,4 +1795,38 @@ bool Tissue_Dynamic::Double_Step_Size_Control(const vector<Vect>& y_error, const
 
 	//Return the flag for if the step size was too large.
 	return step_error_check;
+}
+
+bool Tissue_Dynamic::StrictIsEquilibrated(){
+	double maxBoxDeformation = 0.00001;
+	double boxXDeformation = (LXnew - LXold) / LXold;
+	double boxYDeformation = (LYnew - LYold) / LYold;
+	double maxVertexDisplacment = LX/sqrt((*this).cells.size())*0.001;
+	double maxEdgeTension = Y*EpsilonMax;
+
+	//cout << "Xnew: " << LXnew << " Xold: " << LXold << endl;
+	//cout << "Box Deformation: " << boxXDeformation << " , " << boxYDeformation << endl;
+
+	if (boxXDeformation > maxBoxDeformation || boxYDeformation > maxBoxDeformation) {
+		cout << "Box deformation exceeded tolerance." << endl;
+		return false;
+	}
+
+	for (list<Edge*>::iterator eit = edges.begin(); eit != edges.end(); eit++){
+		if ((*eit)->GetTension_Magnitude() > maxEdgeTension) {
+			cout << "Edge tension exceeded tolerance." << endl;
+			return false;
+		}
+	}
+	for (list<Vertex*>::iterator vit = vertices.begin(); vit != vertices.end(); vit++){
+		Vect oldr = (*vit)->rold;
+		Vect newr = (*vit)->rnew;
+		double displacment = (newr - oldr).Magnitude();
+		if (displacment > maxVertexDisplacment) {
+			cout << "Vertex displacement exceeded tolerance." << endl;
+			return false;
+		}
+	}
+
+	return true;
 }

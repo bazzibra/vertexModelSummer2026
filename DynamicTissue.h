@@ -170,5 +170,6 @@ public:
 	//! Step size control mechanical evolution
 	virtual bool Double_Step_Size_Control(const vector<Vect>& y_error, const vector<double>& rest_error, const double error_tolerance_absolute, double* initial_step_size, double consistency_order);
 
+	bool StrictIsEquilibrated();
 };
 #endif

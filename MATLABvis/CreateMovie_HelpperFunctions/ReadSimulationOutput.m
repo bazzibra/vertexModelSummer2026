@@ -127,7 +127,8 @@ for i = 1:nFields
         case '_EdgesNumber'
             VertexData(1).EdgesNumber = VData(:,i);
         otherwise
-            error('Invalid keyword in Vertices');
+            continue
+            %error('Invalid keyword in Vertices');
     end
 end
 

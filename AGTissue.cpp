@@ -178,6 +178,23 @@ void AGTissue::HelperReadInputData_SetGlobalValues(ifstream* datafile) {
 	else if (globals.count("equilibriumtolerance") == 0) { cout << "WARNING: equilibriumtolerance is not given in input file, used default value " << equilibriumtolerance << endl; }
 	else { cout << "ERROR: Global variable equilibriumtolerance has multiple definition in input file, used default value equilibriumtolerance = " << equilibriumtolerance << endl; }
 
+	if (globals.count("EpsilonMax") == 1) { EpsilonMax = atof(globals["EpsilonMax"].c_str()); }
+	else if (globals.count("EpsilonMax") == 0) { cout << "WARNING: EpsilonMax is not given in input file, used default value " << EpsilonMax << endl; }
+	else { cout << "ERROR: Global variable EpsilonMax has multiple definition in input file, used default value EpsilonMax = " << EpsilonMax << endl; }
+
+	if (globals.count("KAPPA") == 1) { KAPPA = atof(globals["KAPPA"].c_str()); }
+	else if (globals.count("KAPPA") == 0) { cout << "WARNING: KAPPA is not given in input file, used default value " << KAPPA << endl; }
+	else { cout << "ERROR: Global variable KAPPA has multiple definition in input file, used default value KAPPA = " << KAPPA << endl; }
+
+	if (globals.count("Y") == 1) { Y = atof(globals["Y"].c_str()); }
+	else if (globals.count("Y") == 0) { cout << "WARNING: Y is not given in input file, used default value " << Y << endl; }
+	else { cout << "ERROR: Global variable Y has multiple definition in input file, used default value Y = " << Y << endl; }
+
+	if (globals.count("ExternalStressRatio") == 1) { ExternalStressRatio = atof(globals["ExternalStressRatio"].c_str()); }
+	else if (globals.count("ExternalStressRatio") == 0) { cout << "WARNING: ExternalStressRatio is not given in input file, used default value " << ExternalStressRatio << endl; }
+	else { cout << "ERROR: Global variable ExternalStressRatio has multiple definition in input file, used default value ExternalStressRatio = " << ExternalStressRatio << endl; }
+
+
 	// setting set the initial box dimensions here
 	LX0 = LX;
 	LY0 = LY;
@@ -458,6 +475,10 @@ void AGTissue::HelperWriteOutputData_Write2File(ofstream* datafile, bool include
 	*datafile << "NUCLEATIONBASECRITERIA\t" << NUCLEATIONBASECRITERIA << endl;
 	*datafile << "PuLLINGDIR_X\t" << PULLINGDIR_X << endl;
 	*datafile << "PuLLINGDIR_Y\t" << PULLINGDIR_Y << endl;
+	*datafile << "KAPPA\t" << KAPPA << endl;
+	*datafile << "Y\t" << Y << endl;
+	*datafile << "EpsilonMax\t" << EpsilonMax << endl;
+	*datafile << "ExternalStressRatio\t" << ExternalStressRatio << endl;
 	*datafile << "C4\t" << C4 << endl;
 	*datafile << "NUMBER_OF_CELLS\t" << cells.size() << endl;
 	//******ADD NEW OUTPUT HERE******//
@@ -1766,7 +1787,7 @@ void AGTissue::WriteOutputDataAppend(ofstream* datafile) {
 bool AGTissue::IsEquilibrated()
 {
 	bool energyratio = (abs((currentFreeEnergy - pastFreeEnergy)) < equilibriumtolerance);
-	//cout << "Energy ratio: " << abs((currentFreeEnergy - pastFreeEnergy)) << endl;
+	cout << "Energy Step: " << currentFreeEnergy - pastFreeEnergy << endl;
 	return energyratio;
 }
 /*

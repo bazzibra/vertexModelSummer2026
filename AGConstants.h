@@ -22,5 +22,9 @@ extern bool WRITEMITOSIS;
 extern bool VERBOSEON;
 extern bool EQUILIBRIUMMITOSIS;
 extern double C4;
+extern double KAPPA;
+extern double Y;
+extern double EpsilonMax;
+extern double ExternalStressRatio;
 #endif
 

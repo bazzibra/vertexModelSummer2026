@@ -44,7 +44,7 @@ public:
 
 
 	//CONSTRUCTORS AND DESTRUCTORS
-	Edge_Dynamic() {};
+	Edge_Dynamic() : L0(0), restLengthOld(0), restLengthNew(0), currentRestLength(0), SavedInfoForEvolve_RestLength(0) {};
 	virtual ~Edge_Dynamic() {};
 	// WHY NO CELL POINTERS AS INPUT?
 	// why no x flag or y flag?
