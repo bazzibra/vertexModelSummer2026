@@ -1,9 +1,6 @@
 #!/bin/bash
 
 # Aliases for quick directory traversal
-shopt -s expand_aliases
-
-source ~/.bashrc
 
 alias matlab='/Applications/MATLAB_R2025b.app/bin/matlab -batch'
 alias toFunctions='cd Matlab_functions_input_file'
