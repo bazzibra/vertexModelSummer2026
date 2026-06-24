@@ -1,5 +1,5 @@
 r = 2000; % Updated seed to match target
-NbPoints = 1000; 
+NbPoints = 20; 
 limit = 3; 
 cpt = 'quadratic';
 prefix = 'RFB';
@@ -10,13 +10,14 @@ close all;
 scriptDir = fileparts(mfilename('fullpath'));
 projectRoot = fileparts(scriptDir);
 outputDir = fullfile(projectRoot, 'input_files');
+
 if ~exist(outputDir, 'dir')
     mkdir(outputDir);
 end
 
 %% Parameters
 rng(r);
-TOTALTIME = 100.000000;
+TOTALTIME = 10.000000;
 SEED = 89542;
 TIMEINTERVAL = 0.10000;
 error_tolerance_absolute_mechanical = 0.010000;
@@ -66,8 +67,8 @@ NUCLEATIONTHRESHOLD = 0.95*EpsilonMax*Y;
 % Calculate Mesh based on A0 and NbPoints to get LX = 167.705098
 Mesh = LX;
 
-nomfichier= [prefix '_NbPts_' num2str(NbPoints,'%04d') '_rng_' num2str(r,'%04d') '_pot_' potential '_lim_' num2str(limit, '%2d') '20.txt'];
-nomfichier = fullfile(outputDir, nomfichier);
+nomfichier_filename= [prefix '_NbPts_' num2str(NbPoints,'%04d') '_rng_' num2str(r,'%04d') '_pot_' potential '_lim_' num2str(limit, '%2d') '20.txt'];
+nomfichier = fullfile(outputDir, nomfichier_filename);
 
 %% Generate Voronoi
 fprintf('Writing file: %s\n', nomfichier);
@@ -386,3 +387,10 @@ for i=1:length(cinside2)
 end
 fprintf(fid, 'End\n');
 fclose(fid);
+
+% Visualization directory
+
+visualizationDir = fullfile(projectRoot,"visualization_files",erase(nomfichier_filename,".txt") + "_visualization");
+if ~exist(visualizationDir, 'dir')
+    mkdir(visualizationDir); 
+end

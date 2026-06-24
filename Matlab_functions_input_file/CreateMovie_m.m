@@ -22,6 +22,10 @@ projectRoot = fileparts(scriptDir);
 
 inputFile = fullfile(projectRoot,'input_files',inputFileName); 
 
+underScoreIndexing = strfind(inputFileName,'_');
+relevantFilePortion = inputFileName(1:underScoreIndexing(9)); 
+folderOutputName = relevantFilePortion + "visualization";
+
 fid = fopen(inputFile);
 count = 0;
 
@@ -77,10 +81,11 @@ currentPos = ftell(fid);
 % MAIN MOVIE LOOP
 %% ==========================================================
 
-
-outputFileName = strcat(inputFileName,'_movie');
-
-movieFile = fullfile(outputFileName,'movie.mp4');
+% Choose your name
+movieName = inputFileName; 
+outputFileName = strcat(movieName,'_movie');
+outputDir = fullfile(projectRoot,'visualization_files',folderOutputName);
+movieFile = fullfile(outputDir,outputFileName);
 movieObj = VideoWriter(movieFile,'MPEG-4');
 if RuntimeProperties.TotalTime/RuntimeProperties.TimeInterval < 100
     movieObj.Duration = 1000; 
@@ -92,7 +97,7 @@ open(movieObj);
 
 while true
 
-    [V,E,BoxSize,currentPos,TENSION_THRESHOLD,RuntimeProperties] = ReadSimulationOutput(fid,currentPos);
+    [V,E,BoxSize,currentPos,TENSION_THRESHOLD,~] = ReadSimulationOutput(fid,currentPos);
 
     if currentPos == -2
         break

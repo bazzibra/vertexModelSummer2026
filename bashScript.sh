@@ -2,8 +2,7 @@
 
 # Aliases for quick directory traversal
 
-alias matlab='/Applications/MATLAB_R2025b.app/bin/matlab -nojvm -nodisplay -nosplash'
-alias matlabvis='/Applications/MATLAB_R2025b.app/bin/matlab'
+alias matlab='/Applications/MATLAB_R2025b.app/bin/matlab -batch'
 alias toFunctions='cd Matlab_functions_input_file'
 alias inputfiles='cd input_files'
 
@@ -11,7 +10,7 @@ alias inputfiles='cd input_files'
 extractTimeStep () {
     echo extracting last time step
     toFunctions
-    matlab -r "last_timestep_extractor $1 $2;exit" 
+    matlab "last_timestep_extractor $1 $2" 
     cd .. 
     if [[ "$2" == 0 ]]; then
         findInput 2
@@ -48,8 +47,8 @@ findInput () {
 }
 
 runVisualization(){
-    matlab -r "CreateMovie_m $1 $2; exit"
-    matlabvis -r "Greyplot_and_twohistorgrams $3; waitfor(gfc) exit"
+    matlab "CreateMovie_m $1 $2"
+    matlab "generategreyplots $3"
     cd ..
 }
 
@@ -75,7 +74,7 @@ toFunctions
 
 # Generate initialization file and capture output
 
-matlab -r "newlyupdated_initalization_file; exit"
+matlab "nucleation_initalization_file"
 
 cd .. 
 
@@ -101,14 +100,16 @@ dynamicOutput="$currRecent"
 
 extractTimeStep $currRecent 1 
 
+# Capture that last time step as well and run visualization files
+
 findInput 4
 
 finalStep="$currRecent"
 
-echo $finalStep
-
 toFunctions
 
 runVisualization $dynamicOutput 0 $finalStep
+
+pkill -f MathWorksServiceHost || killall -9 matlab
 
 exit 0
