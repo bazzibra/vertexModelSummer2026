@@ -4,7 +4,7 @@
 
 clear; clc; close all;
 
-filename = 'RFB_NbPts_0200_rng_1300_pot_ani_lim_320_relaxed_out.txt';
+filename = 'RFB_NbPts_1000_rng_2000_pot_ani_lim_320_relaxed_out.txt';
 
 fid = fopen(filename,'r');
 if fid == -1
@@ -126,13 +126,11 @@ while ~feof(fid)
             colormap(gray)
             colorbar
 
-            clim([0 1])
-
             xlabel('\theta (Bisector Orientation)')
             ylabel('\alpha (Opening Angle)')
 
             title(sprintf( ...
-                'Relative Nucleation Probability, t = %.0f', ...
+                'Number of Nucleation Sites, t = %.0f', ...
                 current_time))
 
             drawnow
