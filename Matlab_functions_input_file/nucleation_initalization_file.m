@@ -59,7 +59,7 @@ NEWEDGELENGTH = l0/20;
 CURRENTTIME = 0.000000;
 KAPPA=(1/100)*0.227*5.502/ALPHAM;
 GAMMA0=GAMMA;
-Y=(1/0.8)*GAMMA/EpsilonMax;
+Y=1.25*GAMMA/EpsilonMax;
 NUCLEATIONTHRESHOLD = 0.95*EpsilonMax*Y;
 
 %% Simulation Detail Parameters
