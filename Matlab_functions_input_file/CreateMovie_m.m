@@ -85,14 +85,19 @@ currentPos = ftell(fid);
 movieName = inputFileName; 
 outputFileName = strcat(movieName,'_movie');
 outputDir = fullfile(projectRoot,'visualization_files',folderOutputName);
-movieFile = fullfile(outputDir,outputFileName);
-movieObj = VideoWriter(movieFile,'MPEG-4');
-if RuntimeProperties.TotalTime/RuntimeProperties.TimeInterval < 100
-    movieObj.Duration = 1000; 
-else
-    movieObj.FrameRate = 20; 
-end
-open(movieObj);
+tifFolder = fullfile(outputDir,"Video_Images");
+%movieFile = fullfile(outputDir,outputFileName);
+%movieObj = VideoWriter(movieFile);
+
+mkdir(outputDir,"Video_Images");
+
+%if RuntimeProperties.TotalTime/RuntimeProperties.TimeInterval < 100
+   % movieObj.Duration = 1000; 
+%else
+   % movieObj.FrameRate = 20; 
+%end
+
+%pen(movieObj);
 
 
 while true
@@ -113,19 +118,21 @@ while true
 
     %% ---------------- SAVE FRAME ----------------
     disp(['Generating frame ',num2str(count)])
+    
 
-    %framename = strcat(outputFileName,'/frame_',num2str(count,'%03d'),'.tif');
+    framename = strcat(tifFolder,'/frame_',num2str(count,'%03d'),'.tif');
     fig = gcf; 
-    fig.Position(3) = 1920;
-    fig.Position(4) = 1080;
+    % set(fig,'Resize','off'); 
+    % fig.Position(3) = 1920;
+    % fig.Position(4) = 1080;
     imagewd = getframe(fig);
-    %imwrite(imagewd.cdata,framename,'tif','Resolution',100);
-    movieObj.writeVideo(imagewd); 
+    imwrite(imagewd.cdata,framename,'tif','Resolution',100);
+    %movieObj.writeVideo(imagewd); 
 
     count = count + 1;
 end
 
-movieObj.close;
+%movieObj.close;
 
 %% ==========================================================
 % BOX SIZE DIAGNOSTICS
