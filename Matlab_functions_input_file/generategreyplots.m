@@ -2,13 +2,25 @@
 % Generate grey plots for TCJ opening angle and bisector orientation
 % Panels C, D, E
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+function generategreyplots(inputFileName)
 
-clear; clc; close all;
+clc; close all;
 
 %% =========================
 % USER INPUT
-%% =========================
-filename = 'RFB_NbPts_1000_rng_2000_pot_ani_lim_320_relaxed_out_lasttimestep.txt';   % <-- your snapshot file
+%% =========================   % <-- your snapshot file
+
+% 
+
+underScoreIndexing = strfind(inputFileName,'_');
+relevantFilePortion = inputFileName(1:underScoreIndexing(9)); 
+folderOutputName = relevantFilePortion + "visualization";
+
+
+scriptDir = fileparts(mfilename('fullpath'));
+projectRoot = fileparts(scriptDir);
+
+inputDir = fullfile(projectRoot,'input_files',inputFileName);
 
 nbins_alpha = 20;
 nbins_theta = 20;
@@ -24,7 +36,7 @@ rare_threshold = 1e-4;
 %% =========================
 % READ FILE
 %% =========================
-fid = fopen(filename, 'r');
+fid = fopen(inputDir, 'r');
 if fid == -1
     error('Could not open file.');
 end
@@ -104,7 +116,8 @@ theta_centers = 0.5 * (theta_edges(1:end-1) + theta_edges(2:end));
 H_C = histcounts2(theta_all, alpha_all, theta_edges, alpha_edges);
 H_Cnorm = H_C / sum(H_C(:));
 
-figure;
+fig = figure;
+panelCName = "Fraction_of_TCJs";
 imagesc(theta_centers, alpha_centers, H_Cnorm');
 axis xy;
 pi_axis_ticks();
@@ -114,16 +127,21 @@ xlabel('Bisector Orientation \theta (rad)');
 ylabel('Opening Angle \alpha (rad)');
 title(sprintf('C: Fraction of TCJs, n = %d', sum(H_C(:))));
 
+outputDir = fullfile(projectRoot,"visualization_files",folderOutputName,panelCName); 
+saveas(fig,outputDir,'png'); 
+
 
 %% =========================
 % PANEL D: Fraction of nucleation events
 % (placeholder: identical to C for now)
 %% =========================
+
 H_D = histcounts2(theta_nuc, alpha_nuc,theta_edges, alpha_edges);
 
 H_Dnorm = H_D / sum(H_D(:));
 
-figure;
+fig = figure;
+panelDName = "Fraction_of_nucleation_events";
 imagesc(theta_centers, alpha_centers, H_Dnorm');
 axis xy;
 pi_axis_ticks();
@@ -132,6 +150,9 @@ colorbar;
 xlabel('Bisector Orientation \theta (rad)');
 ylabel('Opening Angle \alpha (rad)');
 title(sprintf('D: Fraction of aSF Nucleation Events, n = %d', sum(H_D(:))));
+
+outputDir = fullfile(projectRoot,"visualization_files",folderOutputName,panelDName); 
+saveas(fig,outputDir,'png'); 
 
 %% =========================
 % PANEL E: Relative nucleation rate
@@ -142,7 +163,9 @@ H_E = H_D ./ H_C;
 rare_mask = H_C < rare_threshold;
 H_E(rare_mask) = NaN;
 
-figure;
+fig = figure;
+panelEName = "Relative_nucleation_rate";
+
 imagesc(theta_centers, alpha_centers, H_E');
 axis xy;
 pi_axis_ticks();
@@ -156,6 +179,9 @@ hold on;
 contour(theta_centers, alpha_centers, rare_mask', ...
         [1 1], 'k--', 'LineWidth', 1);
 hold off;
+
+outputDir = fullfile(projectRoot,"visualization_files",folderOutputName,panelEName); 
+saveas(fig,outputDir,'png'); 
 
 %% =========================
 % DONE
@@ -173,6 +199,8 @@ function pi_axis_ticks()
     yticklabels({'0','$\pi/4$','$\pi/2$','$3\pi/4$','$\pi$'});
 
     set(gca,'TickLabelInterpreter','latex')
+
+end
 
 end
 

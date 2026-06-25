@@ -67,6 +67,8 @@ MITOSISON = 0;
 WRITEMITOSIS = 1; 
 VERBOSEON = 1; 
 EQUILIBRIUMMITOSIS = 1; 
+NUCLEATIONTHRESHOLD = 1; 
+NUCLEATIONBASECRITERIA = 0; 
 
 nomfichier= [prefix '_NbPts_' num2str(NbPoints,'%04d') '_rng_' num2str(r,'%04d') '_pot_' potential '_lim_' num2str(limit, '%2d') '20.txt'];
 nomfichier = fullfile(outputDir, nomfichier);

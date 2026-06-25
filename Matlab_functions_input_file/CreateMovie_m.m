@@ -22,6 +22,10 @@ projectRoot = fileparts(scriptDir);
 
 inputFile = fullfile(projectRoot,'input_files',inputFileName); 
 
+underScoreIndexing = strfind(inputFileName,'_');
+relevantFilePortion = inputFileName(1:underScoreIndexing(9)); 
+folderOutputName = relevantFilePortion + "visualization";
+
 fid = fopen(inputFile);
 count = 0;
 
@@ -77,22 +81,28 @@ currentPos = ftell(fid);
 % MAIN MOVIE LOOP
 %% ==========================================================
 
+% Choose your name
+movieName = inputFileName; 
+outputFileName = strcat(movieName,'_movie');
+outputDir = fullfile(projectRoot,'visualization_files',folderOutputName);
+tifFolder = fullfile(outputDir,"Video_Images");
+%movieFile = fullfile(outputDir,outputFileName);
+%movieObj = VideoWriter(movieFile);
 
-outputFileName = strcat(inputFileName,'_movie');
+mkdir(outputDir,"Video_Images");
 
-movieFile = fullfile(outputFileName,'movie.mp4');
-movieObj = VideoWriter(movieFile,'MPEG-4');
-if RuntimeProperties.TotalTime/RuntimeProperties.TimeInterval < 100
-    movieObj.Duration = 1000; 
-else
-    movieObj.FrameRate = 20; 
-end
-open(movieObj);
+%if RuntimeProperties.TotalTime/RuntimeProperties.TimeInterval < 100
+   % movieObj.Duration = 1000; 
+%else
+   % movieObj.FrameRate = 20; 
+%end
+
+%pen(movieObj);
 
 
 while true
 
-    [V,E,BoxSize,currentPos,TENSION_THRESHOLD,RuntimeProperties] = ReadSimulationOutput(fid,currentPos);
+    [V,E,BoxSize,currentPos,TENSION_THRESHOLD,~] = ReadSimulationOutput(fid,currentPos);
 
     if currentPos == -2
         break
@@ -108,18 +118,21 @@ while true
 
     %% ---------------- SAVE FRAME ----------------
     disp(['Generating frame ',num2str(count)])
+    
 
-    %framename = strcat(outputFileName,'/frame_',num2str(count,'%03d'),'.tif');
+    framename = strcat(tifFolder,'/frame_',num2str(count,'%03d'),'.tif');
     fig = gcf; 
-    fig.Position(3) = 1920; %on windows I found that using fig.Position(3) = 1920; and fig.Position(4) = 1080; while on mac just fig.Position(3) = 1920;
+    % set(fig,'Resize','off'); 
+    % fig.Position(3) = 1920;
+    % fig.Position(4) = 1080;
     imagewd = getframe(fig);
-    %imwrite(imagewd.cdata,framename,'tif','Resolution',100);
-    movieObj.writeVideo(imagewd); 
+    imwrite(imagewd.cdata,framename,'tif','Resolution',100);
+    %movieObj.writeVideo(imagewd); 
 
     count = count + 1;
 end
 
-movieObj.close;
+%movieObj.close;
 
 %% ==========================================================
 % BOX SIZE DIAGNOSTICS
