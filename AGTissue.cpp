@@ -2001,4 +2001,29 @@ double AGTissue::HelperResolveVertices_CheckStability(Vertex* vert, Edge* edge1,
 	return stability;
 }
 
+bool AGTissue::StrictIsEquilibrated(){
+	double maxBoxDeformation = 0.00001;
+	double boxXDeformation = (LXnew - LXold) / LXold;
+	double boxYDeformation = (LYnew - LYold) / LYold;
+	double maxVertexDisplacment = LX/sqrt((*this).cells.size())*0.001;
 
+	//cout << "Xnew: " << LXnew << " Xold: " << LXold << endl;
+	//cout << "Box Deformation: " << boxXDeformation << " , " << boxYDeformation << endl;
+
+	if (boxXDeformation > maxBoxDeformation || boxYDeformation > maxBoxDeformation) {
+		cout << "Box deformation exceeded tolerance." << endl;
+		return false;
+	}
+
+	for (list<Vertex*>::iterator vit = vertices.begin(); vit != vertices.end(); vit++){
+		Vect oldr = (*vit)->rold;
+		Vect newr = (*vit)->rnew;
+		double displacment = (newr - oldr).Magnitude();
+		if (displacment > maxVertexDisplacment) {
+			cout << "Vertex displacement exceeded tolerance." << endl;
+			return false;
+		}
+	}
+
+	return true;
+}

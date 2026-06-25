@@ -17,9 +17,9 @@ end
 
 %% Parameters
 rng(r);
-TOTALTIME = 100.000000;
+TOTALTIME = 1000.000000;
 SEED = 89542;
-TIMEINTERVAL = 0.25;
+TIMEINTERVAL = 0.1;
 error_tolerance_absolute_mechanical = 0.010000;
 TISSUE_EXT_STRESS_X = 0.000000;     %should both be 0 to relax tissue, change before dynamic
 TISSUE_EXT_STRESS_Y = 0.000000; 
