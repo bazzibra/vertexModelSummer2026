@@ -20,6 +20,7 @@ rng(r);
 TOTALTIME = 1000;
 SEED = 89542;
 TIMEINTERVAL = 0.1;
+TIMEINTERVAL = 0.1;
 error_tolerance_absolute_mechanical = 0.010000;
 TISSUE_EXT_STRESS_X = 0.000000;     %should both be 0 to relax tissue, change before dynamic
 TISSUE_EXT_STRESS_Y = 0.000000; 
@@ -60,7 +61,7 @@ NEWEDGELENGTH = l0/20;
 CURRENTTIME = 0.000000;
 KAPPA=(7/100)*0.227*5.502/ALPHAM;
 GAMMA0=GAMMA;
-Y=(1/0.8)*GAMMA/EpsilonMax;
+Y=1.25*GAMMA/EpsilonMax;
 NUCLEATIONTHRESHOLD = 0.95*EpsilonMax*Y;
 
 %% Simulation Detail Parameters

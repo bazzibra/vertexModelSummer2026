@@ -2,7 +2,7 @@
 
 # Aliases for quick directory traversal
 
-alias matlab='/Applications/MATLAB_R2025b.app/bin/matlab -batch'
+alias matlab='/Applications/MATLAB_R2025a.app/bin/matlab -batch'
 alias toFunctions='cd Matlab_functions_input_file'
 alias inputfiles='cd input_files'
 

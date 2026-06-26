@@ -144,5 +144,8 @@ public:
 
 	//calculates the area of the box
 	virtual double GetBoxArea();
+
+	//Tests if the packing is equilibrated using a stricter criterion than IsEquilibrated()
+	bool StrictIsEquilibrated();
 };
 #endif

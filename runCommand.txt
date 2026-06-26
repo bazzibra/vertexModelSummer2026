@@ -10,11 +10,30 @@ clang++ -std=c++11 -c AGCell.cpp -o AGCell.o && clang++ -std=c++11 -c AGTissue.c
 
 Run: ./my_program_Dyn
 
+
+
+
+
+
 Pathname:
 "//Users//rafaelvolkamer-pastor//Library/CloudStorage//GoogleDrive-volkamerr@carleton.edu//My Drive//Summer Experiences//Michigan Biophysics REU//vertexModelSummer2026//vertexModelSummer2026//input_files//"
+
+
+
+
 
 Original Debugger:
 clang++ -g AGCell.cpp AgTissue.cpp CellClass.cpp    EdgeClass.cpp SharedConstants.cpp TissueClass.cpp VectClass.cpp VertexClass.cpp MainTest.cpp -o base.exe
 
 Dynamic Debugger:
 clang++ -g AGCell.cpp AgTissue.cpp CellClass.cpp DynamicEdge.cpp DynamicMain.cpp DynamicTissue.cpp EdgeClass.cpp SharedConstants.cpp TissueClass.cpp VectClass.cpp VertexClass.cpp -o dynamic.exe
+
+
+
+
+
+
+Bash Script:
+zsh backScript.sh
+
+-Install wsl so that the vs code terminal can interpret bash

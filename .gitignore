@@ -4,9 +4,8 @@
 *.txt_movie
 *.mp4
 *.txt
+*.mov
 my_program_AG
 my_program_Dyn
 base.exe
 dynamic.exe
-MainTest.cpp
-DynamicMain.cpp

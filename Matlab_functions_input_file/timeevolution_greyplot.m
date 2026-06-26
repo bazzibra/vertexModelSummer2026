@@ -4,7 +4,7 @@
 
 clear; clc; close all;
 
-filename = 'RFB_NbPts_0200_rng_1300_pot_ani_lim_320_relaxed_out.txt';
+filename = 'RFB_NbPts_1000_rng_2000_pot_ani_lim_320_relaxed_error.txt';
 
 fid = fopen(filename,'r');
 if fid == -1
