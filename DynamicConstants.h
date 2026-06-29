@@ -18,6 +18,7 @@ extern double KAPPA;				 //!< Remodeling rate constant for changes in edge rest 
 extern double L0;					//!< Rest length of the edge when it is first created
 extern const double GAMMA0;         //!< GAMMA at the very beginning of the simulation (the const GAMMA the tissue was equilibrated with) 
 extern double ExternalStressRatio;  //!< Ratio of the external stress to the maximum edge tension before edges undergo a changes in rest length. Used to calculate TISSUE_EXT_STRESS_Y in DynamicMain.cpp
+extern int TOTALT1; 
 #endif
 
  

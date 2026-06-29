@@ -51,7 +51,7 @@ runVisualization(){
     matlab "CreateMovie_m $1 $2"
     matlab "generategreyplots $3"
     matlab "greyplotcompletemovie $3"
-    matlab "visualizeTension $3" 
+    matlab "tensionAnglePlots $1" 
     cd ..
 }
 

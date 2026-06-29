@@ -1,5 +1,5 @@
 r = 1050; % Updated seed to match target
-NbPoints = 40; 
+NbPoints = 100; 
 limit = 3; 
 cpt = 'quadratic';
 prefix = 'RFB';
@@ -62,6 +62,7 @@ KAPPA=(3/100)*0.227*5.502/ALPHAM;
 GAMMA0=GAMMA;
 Y=1.25*GAMMA/EpsilonMax;
 NUCLEATIONTHRESHOLD = 0.95*EpsilonMax*Y;
+EpsilonMax = 10000;
 
 %% Simulation Detail Parameters
 % Calculate Mesh based on A0 and NbPoints to get LX = 167.705098
