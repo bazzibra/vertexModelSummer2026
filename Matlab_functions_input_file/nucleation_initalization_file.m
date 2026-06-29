@@ -1,5 +1,5 @@
-r = 5432; % Updated seed to match target
-NbPoints = 800; 
+r = 1050; % Updated seed to match target
+NbPoints = 40; 
 limit = 3; 
 cpt = 'quadratic';
 prefix = 'RFB';
@@ -19,7 +19,6 @@ end
 rng(r);
 TOTALTIME = 1000;
 SEED = 89542;
-TIMEINTERVAL = 0.1;
 TIMEINTERVAL = 0.1;
 error_tolerance_absolute_mechanical = 0.010000;
 TISSUE_EXT_STRESS_X = 0.000000;     %should both be 0 to relax tissue, change before dynamic
@@ -59,7 +58,7 @@ MINAREA = A0/100;
 MINLENGTH = l0/40;
 NEWEDGELENGTH = l0/20;
 CURRENTTIME = 0.000000;
-KAPPA=(7/100)*0.227*5.502/ALPHAM;
+KAPPA=(3/100)*0.227*5.502/ALPHAM;
 GAMMA0=GAMMA;
 Y=1.25*GAMMA/EpsilonMax;
 NUCLEATIONTHRESHOLD = 0.95*EpsilonMax*Y;
