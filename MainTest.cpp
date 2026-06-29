@@ -183,7 +183,7 @@ int main()
 		tissue.WriteOutputDataAppend(&datafile);
 		cout << "writing at CURRENTTIME: " << CURRENTTIME << "\n";
 		cout << "Number of cells: " << tissue.cells.size() << endl;
-				//cout << "Equilibrated: " << tissue.IsEquilibrated() << endl;  //I don't know if I actually need this here anymore
+		//cout << "Equilibrated: " << tissue.IsEquilibrated() << endl;  //I don't know if I actually need this here anymore
 		strictlyEquilibrated = tissue.StrictIsEquilibrated();
 		cout << "Strictly Equilibrated: " << strictlyEquilibrated << endl;
 		

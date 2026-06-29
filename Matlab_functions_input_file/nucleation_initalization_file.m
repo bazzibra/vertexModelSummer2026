@@ -1,5 +1,5 @@
-r = 620; % Updated seed to match target
-NbPoints = 50; 
+r = 2000; % Updated seed to match target
+NbPoints = 10; 
 limit = 3; 
 cpt = 'quadratic';
 prefix = 'RFB';
@@ -17,7 +17,7 @@ end
 
 %% Parameters
 rng(r);
-TOTALTIME = 1000.000000;
+TOTALTIME = 100.000000;
 SEED = 89542;
 TIMEINTERVAL = 0.1;
 error_tolerance_absolute_mechanical = 0.010000;
