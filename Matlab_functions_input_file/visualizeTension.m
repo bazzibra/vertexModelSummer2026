@@ -2,18 +2,36 @@
 % Generate plots to visualize the tension distribution across cells
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-clear; clc; close all;
+function visualizeTension(inputFileName)
+
+clc; close all;
+
+%% =========================
+% USER INPUT
+%% =========================   % <-- your snapshot file
+
+% 
+
+underScoreIndexing = strfind(inputFileName,'_');
+relevantFilePortion = inputFileName(1:underScoreIndexing(9)); 
+folderOutputName = relevantFilePortion + "visualization";
+
+
+scriptDir = fileparts(mfilename('fullpath'));
+projectRoot = fileparts(scriptDir);
+
+inputDir = fullfile(projectRoot,'input_files',inputFileName);
 
 %% =========================
 % USER INPUT
 %% =========================
-filename = 'RFB_NbPts_1000_rng_2000_pot_ani_lim_320_relaxed_out_lasttimestep.txt';   % <-- your snapshot file
+  % <-- your snapshot file
 
 
 %% =========================
 % READ FILE
 %% =========================
-fid = fopen(filename, 'r');
+fid = fopen(inputDir, 'r');
 if fid == -1
     error('Could not open file.');
 end
@@ -59,9 +77,12 @@ while ~feof(fid)
     end
 end
 
-figure;
+fig = figure;
 histogram(tensions, 50);
 xlabel('Edge Tension');
 ylabel('Count');
 title('Tension Distribution Across All Edges');
+
+outputDir = fullfile(projectRoot,"visualization_files",folderOutputName,"visualizeTension"); 
+saveas(fig,outputDir,'png'); 
 
