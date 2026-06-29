@@ -60,7 +60,8 @@ function greyplotcompletemovie(inputFileName)
     frame_id = 1;
     current_time = 0;
     
-    figure('Color','w');
+    fig = figure('Color','w');
+    fig.Position = [100 100 800 600]; 
     
     %% =========================
     % MAIN LOOP
