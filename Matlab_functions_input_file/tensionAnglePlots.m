@@ -1,13 +1,24 @@
-% clear
-% 
-% filenamme = 'RFB_NbPts_1000_rng_2000_pot_ani_lim_320_relaxed_out.txt';
-% [edgeArray,Y,NUCLEATIONTHRESHOLD, EpsilonMax] = readEdgeData(filenamme);
-% 
-% time = edgeArray(:, 1);
-% tension = edgeArray(:, 5);
-% restlength = edgeArray(:, 7);
-% length = edgeArray(:, 6);
-% angle = edgeArray(:, 9);
+function tensionAnglePlots(filenamme)
+
+scriptDir = fileparts(mfilename('fullpath'));
+projectRoot = fileparts(scriptDir);
+inputDir = fullfile(projectRoot,"input_files",filenamme);
+
+underScoreIndexing = strfind(filenamme,'_');
+relevantFilePortion = filenamme(1:underScoreIndexing(9)); 
+folderOutputName = relevantFilePortion + "visualization";
+
+outputDir = fullfile(projectRoot,'visualization_files',folderOutputName);
+fileName = fullfile(outputDir,'tension_angle_evolution.mp4'); 
+
+%filenamme = 'RFB_NbPts_1000_rng_2000_pot_ani_lim_320_relaxed_out.txt';
+[edgeArray,Y,NUCLEATIONTHRESHOLD, EpsilonMax] = readEdgeData(inputDir);
+
+time = edgeArray(:, 1);
+tension = edgeArray(:, 5);
+restlength = edgeArray(:, 7);
+length = edgeArray(:, 6);
+angle = edgeArray(:, 9);
 
 %Number of edges above threshold and over max tension
 uniqueTimes = unique(time, 'stable');
@@ -23,7 +34,7 @@ for k = 1:numel(uniqueTimes)
     countAboveEpsilonMax(k) = sum(frameTension > EpsilonMax * Y);
 end
 
-figure(1);
+fig = figure(1);
 plot(uniqueTimes, countAboveNucleation, 'r-', 'LineWidth', 2);
 hold on;
 plot(uniqueTimes, countAboveEpsilonMax, 'b-', 'LineWidth', 2);
@@ -34,6 +45,11 @@ ylabel('Number of Edges');
 title('Edges Above Tension Thresholds Over Time');
 legend('Tension > NUCLEATIONTHRESHOLD', 'Tension > EpsilonMax * Y', 'Location', 'best');
 
+outputDir = fullfile(projectRoot,"visualization_files",folderOutputName,'TensionEvolutionGraph'); 
+saveas(fig,outputDir,'png'); 
+
+close all
+
 % Build a video showing both histograms over all time steps.
 xedges = linspace(0, pi, 101);
 yedges1 = linspace(0, EpsilonMax * Y, 51);
@@ -41,12 +57,13 @@ yedges2 = linspace(EpsilonMax * Y, 1.5 * EpsilonMax * Y, 11);
 yedges = [yedges1, yedges2(2:end)];
 
 videoName = 'tension_angle_evolution.mp4';
-v = VideoWriter(videoName, 'MPEG-4');
+v = VideoWriter(fileName, 'MPEG-4');
 v.FrameRate = 12;
 open(v);
 
 fig = figure(2);
-set(fig, 'Color', 'w', 'Position', [100 100 1200 500]);
+set(fig, 'Color', 'w');
+fig.Position(3) = 1000;
 tiledlayout(1, 2, 'Padding', 'compact', 'TileSpacing', 'compact');
 
 for k = 1:numel(uniqueTimes)

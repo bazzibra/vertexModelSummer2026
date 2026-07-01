@@ -3,7 +3,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 function greyplotcompletemovie(inputFileName)
 
-    clc; close all;
+    close all;
 
     scriptDir = fileparts(mfilename('fullpath'));
     projectRoot = fileparts(scriptDir);
@@ -28,14 +28,17 @@ function greyplotcompletemovie(inputFileName)
     theta_min = 0;
     theta_max = pi/2;
     
-    rare_threshold = 5;    % minimum TCJ count per bin
-    
     %% BIN SETUP
     alpha_edges = linspace(alpha_min, alpha_max, nbins_alpha+1);
     theta_edges = linspace(theta_min, theta_max, nbins_theta+1);
     
     alpha_centers = 0.5*(alpha_edges(1:end-1)+alpha_edges(2:end));
     theta_centers = 0.5*(theta_edges(1:end-1)+theta_edges(2:end));
+
+    theta_horizontal = [];
+    theta_vertical = [];
+    time = [];
+
     
     %% OUTPUT
     outputDir = fullfile(projectRoot,'visualization_files',folderOutputName);
@@ -130,6 +133,7 @@ function greyplotcompletemovie(inputFileName)
                 imagesc(theta_centers, alpha_centers, H_D')
     
                 axis xy
+                pi_axis_ticks()
     
                 colormap(gray)
                 colorbar
@@ -146,6 +150,12 @@ function greyplotcompletemovie(inputFileName)
                 %% Save frame to movie
                 frame = getframe(gcf);
                 writeVideo(video, frame);
+
+                valid = theta_nuc <= (theta_max-theta_min)/2;
+
+                theta_horizontal = [theta_horizontal, length(theta_nuc) - sum(valid)];
+                theta_vertical = [theta_vertical, sum(valid)];
+                time = [time, current_time];
     
                 frame_id = frame_id + 1;
     
@@ -199,8 +209,25 @@ function greyplotcompletemovie(inputFileName)
     fclose(fid);
     close(video);
     
-    disp('Relative nucleation movie + frames created successfully.');
+    fig = figure();
     
+    plot(time, theta_vertical, 'b-', 'LineWidth', 1.5)
+    hold on
+    plot(time, theta_horizontal, 'r--', 'LineWidth', 1.5)
+    hold off
+    
+    xlabel('Time (s)')
+    ylabel('\theta (rad)')   % or degrees if appropriate
+    title('Total Nucleated Vertices Split by \theta Over Time')
+    legend('\theta <= pi/2', '\theta > pi/2', 'Location', 'best')
+    grid on
+
+    nameFig = 'NucleationSplitByAngleOverTime';
+    outputDir = fullfile(projectRoot,"visualization_files",folderOutputName,nameFig); 
+    saveas(fig,outputDir,'png'); 
+    
+    disp('Relative nucleation movie + frames + split nucleation plot created successfully.');
+
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     % AXIS TICKS
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

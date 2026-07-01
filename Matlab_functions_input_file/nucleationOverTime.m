@@ -2,11 +2,16 @@ function nucleationOverTime(inputFileName)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % MOVING GREY PLOT: Relative Nucleation Probability (Panel E)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    clc; close all;
-
+    
+    underScoreIndexing = strfind(inputFileName,'_');
+    relevantFilePortion = inputFileName(1:underScoreIndexing(9)); 
+    folderOutputName = relevantFilePortion + "visualization";
+    
+    
     scriptDir = fileparts(mfilename('fullpath'));
     projectRoot = fileparts(scriptDir);
-    inputDir = fullfile(projectRoot,"input_files",inputFileName);
+    
+    inputDir = fullfile(projectRoot,'input_files',inputFileName);
 
     fid = fopen(inputDir,'r');
     if fid == -1
@@ -80,7 +85,7 @@ function nucleationOverTime(inputFileName)
     end
 
     
-    figure()
+    fig = figure();
     plot(time, totalnuc, 'LineWidth', 1)
     
     xlim([0, max(time)])
@@ -93,6 +98,11 @@ function nucleationOverTime(inputFileName)
     grid on
     box on
     
-    disp('Nucleation plot created successfully.');
+    disp('Nucleation over time plot created successfully.');
+    nameFig = 'nucleationOverTimeGraph';
+    outputDir = fullfile(projectRoot,"visualization_files",folderOutputName,nameFig); 
+    saveas(fig,outputDir,'png'); 
+
+
     
 end

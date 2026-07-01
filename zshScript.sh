@@ -2,7 +2,7 @@
 
 # Aliases for quick directory traversal
 
-alias matlab='/Applications/MATLAB_R2025b.app/bin/matlab -batch'
+alias matlab='/Applications/MATLAB_R2025a.app/bin/matlab -batch'
 alias toFunctions='cd Matlab_functions_input_file'
 alias inputfiles='cd input_files'
 
@@ -50,8 +50,11 @@ findInput () {
 runVisualization(){
     matlab "CreateMovie_m $1 $2"
     matlab "generategreyplots $3"
-    matlab "greyplotcompletemovie $3"
+    matlab "greyplotcompletemovie $1"
     matlab "visualizeTension $3" 
+    matlab "nucleationOverTime $1"
+    matlab "tensionAnglePlots $1"
+    matlab "FindThreefoldVertexAndCables $1"
     cd ..
 }
 

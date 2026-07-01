@@ -1,5 +1,5 @@
-r = 1050; % Updated seed to match target
-NbPoints = 40; 
+r = 382; % Updated seed to match target
+NbPoints = 100; 
 limit = 3; 
 cpt = 'quadratic';
 prefix = 'RFB';
