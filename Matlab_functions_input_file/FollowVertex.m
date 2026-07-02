@@ -165,12 +165,6 @@ end
 
 movieObj.close;
 
-%% ==========================================================
-% BOX SIZE DIAGNOSTICS
-%% ==========================================================
-figure; plot(LX_VECT); ylabel('LX')
-figure; plot(LY_VECT); ylabel('LY')
-figure; plot(LX_VECT.*LY_VECT); ylabel('LX * LY')
 
 %% ==========================================================
 % CLOSE FILE

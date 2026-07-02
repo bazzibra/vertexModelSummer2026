@@ -1,4 +1,4 @@
-r = 382; % Updated seed to match target
+r = 766; % Updated seed to match target
 NbPoints = 100; 
 limit = 3; 
 cpt = 'quadratic';

@@ -17,7 +17,7 @@ time = [];
 scriptDir = fileparts(mfilename('fullpath'));
 projectRoot = fileparts(scriptDir);
 
-inputFile = fullfile(projectRoot,'input_files',inputFileName); 
+inputFile = fullfile(projectRoot,'input_files',inputFileName);
 
 underScoreIndexing = strfind(inputFileName,'_');
 relevantFilePortion = inputFileName(1:underScoreIndexing(9)); 
@@ -26,6 +26,7 @@ folderOutputName = [relevantFilePortion 'visualization'];
 fid = fopen(inputFile);
 count = 0;
 currentPos = 0;
+currenttime = -1;
 
 % Open output files
 outputDir = fullfile(projectRoot,"visualization_files",folderOutputName,'threefold_nucleation_vertices.txt'); 
@@ -35,8 +36,12 @@ cablesOutputDir = fullfile(projectRoot,"visualization_files",folderOutputName,'c
 fidCables = fopen(cablesOutputDir,'w');
 
 while true
-
-    [V,E,~,currentPos,~,~, currenttime, ~] = ReadSimulationOutput(fid,currentPos);
+    pastime = currenttime;
+    [V,E,~,currentPos,NucleationThreshold,~, currenttime, ~] = ReadSimulationOutput(fid,currentPos);
+    
+    if(pastime == currenttime)
+        break
+    end
 
     if currentPos == -2
         break
@@ -60,7 +65,7 @@ while true
 
     if(~overNucleated)
         for i = 1:length(V.id)
-            cableIds = GetLongestChain(V, E, V.id(i));
+            cableIds = GetLongestChain(V, E, NucleationThreshold, V.id(i));
     
             if numel(cableIds) > 2
                 cablesThisTime{end+1} = cableIds;
@@ -127,8 +132,8 @@ fclose(fidCables);
 
 end
 
-function cableIds = GetLongestChain(V, E, vertexId, visitedIds)
-    if nargin < 4
+function cableIds = GetLongestChain(V, E, NucleationThreshold, vertexId, visitedIds)
+    if nargin < 5
         visitedIds = [];
     end
 
@@ -141,7 +146,7 @@ function cableIds = GetLongestChain(V, E, vertexId, visitedIds)
     % Mark current vertex as visited
     visitedIds = [visitedIds, vertexId];
 
-    nucleatedNeighborIds = GetNucleatedNeighbors(V, E, vertexId);
+    nucleatedNeighborIds = GetNucleatedNeighbors(V, E, NucleationThreshold, vertexId);
 
     % Remove anything already visited
     nucleatedNeighborIds = nucleatedNeighborIds(~ismember(nucleatedNeighborIds, visitedIds));
@@ -154,14 +159,14 @@ function cableIds = GetLongestChain(V, E, vertexId, visitedIds)
     cableIds = vertexId;
 
     for id = nucleatedNeighborIds
-        tempCable = [vertexId, GetLongestChain(V, E, id, visitedIds)];
+        tempCable = [vertexId, GetLongestChain(V, E, NucleationThreshold, id, visitedIds)];
         if numel(tempCable) > numel(cableIds)
             cableIds = tempCable;
         end
     end
 end
 
-function nucleatedNeighborIds = GetNucleatedNeighbors(V, E, vertexId)
+function nucleatedNeighborIds = GetNucleatedNeighbors(V, E, NucleationThreshold,vertexId)
 % Returns nucleated neighboring vertex ids for a given vertex id.
 % If the vertex itself is not nucleated, returns [].
 
@@ -180,7 +185,7 @@ if ~isSelfNucleated
     return
 end
 
-edgeMask = (E.vertex1 == vertexId) | (E.vertex2 == vertexId);
+edgeMask = ((E.vertex1 == vertexId) | (E.vertex2 == vertexId)) & (E.tension > NucleationThreshold);
 neighborIds = unique([E.vertex1(edgeMask); E.vertex2(edgeMask)]);
 neighborIds(neighborIds == vertexId) = [];
 

@@ -217,7 +217,7 @@ function greyplotcompletemovie(inputFileName)
     hold off
     
     xlabel('Time (s)')
-    ylabel('\theta (rad)')   % or degrees if appropriate
+    ylabel('Count')   % or degrees if appropriate
     title('Total Nucleated Vertices Split by \theta Over Time')
     legend('\theta <= pi/2', '\theta > pi/2', 'Location', 'best')
     grid on
