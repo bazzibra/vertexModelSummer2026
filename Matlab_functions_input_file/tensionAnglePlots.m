@@ -1,17 +1,24 @@
-function tensionAnglePlots(filenamme)
+function tensionAnglePlots(inputFileName)
+
+clc; close all;
+
+%% =========================
+% USER INPUT
+%% =========================   % <-- your snapshot file
+
+% 
+
+underScoreIndexing = strfind(inputFileName,'_');
+relevantFilePortion = inputFileName(1:underScoreIndexing(9)); 
+folderOutputName = relevantFilePortion + "visualization";
+
 
 scriptDir = fileparts(mfilename('fullpath'));
 projectRoot = fileparts(scriptDir);
-inputDir = fullfile(projectRoot,"input_files",filenamme);
 
-underScoreIndexing = strfind(filenamme,'_');
-relevantFilePortion = filenamme(1:underScoreIndexing(9)); 
-folderOutputName = relevantFilePortion + "visualization";
+inputDir = fullfile(projectRoot,'input_files',inputFileName);
 
-outputDir = fullfile(projectRoot,'visualization_files',folderOutputName);
-fileName = fullfile(outputDir,'tension_angle_evolution.mp4'); 
-
-%filenamme = 'RFB_NbPts_1000_rng_2000_pot_ani_lim_320_relaxed_out.txt';
+% filenamme = 'RFB_NbPts_1000_rng_2000_pot_ani_lim_320_relaxed_out.txt';
 [edgeArray,Y,NUCLEATIONTHRESHOLD, EpsilonMax] = readEdgeData(inputDir);
 
 time = edgeArray(:, 1);
@@ -57,7 +64,8 @@ yedges2 = linspace(EpsilonMax * Y, 1.5 * EpsilonMax * Y, 11);
 yedges = [yedges1, yedges2(2:end)];
 
 videoName = 'tension_angle_evolution.mp4';
-v = VideoWriter(fileName, 'MPEG-4');
+outputDir = fullfile(projectRoot,"visualization_files",folderOutputName,videoName);
+v = VideoWriter(outputDir, 'MPEG-4');
 v.FrameRate = 12;
 open(v);
 

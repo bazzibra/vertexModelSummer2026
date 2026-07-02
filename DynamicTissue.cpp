@@ -487,6 +487,7 @@ void Tissue_Dynamic::HelperWriteOutputData_Write2File(ofstream* datafile, bool i
 	*datafile << "GAMMA0\t" << GAMMA0 << endl;
 	*datafile << "Y\t" << Y << endl;
 	*datafile << "ExternalStressRatio\t" << ExternalStressRatio << endl;
+	*datafile << "TOTALT1\t" << TOTALT1 << endl; 
 
 	//******ADD NEW OUTPUT HERE******//
 	*datafile << "endGlobal" << endl;
@@ -495,6 +496,7 @@ void Tissue_Dynamic::HelperWriteOutputData_Write2File(ofstream* datafile, bool i
 		//print the vertex info
 		/*
 		*datafile << "Vertices" << endl;
+		/
 		*datafile << "id\tx\ty" << endl;
 		for (list<Vertex*>::iterator vit = vertices.begin(); vit != vertices.end(); vit++) {	//loop through all of the vertices in the tissue
 			*datafile << (*(*vit)).id << "\t" << (*(*vit)).r.x << "\t" << (*(*vit)).r.y << endl;						//write it's info to the file
@@ -1360,6 +1362,7 @@ bool Tissue_Dynamic::T1(ofstream* errorfile) {
 			flag++;
 		}
 	}
+	TOTALT1 = flag; 
 	if (flag == 0) {
 		return false;
 	}
